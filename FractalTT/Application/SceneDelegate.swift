@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Coordinator
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -15,11 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let controller: ViewController = ViewController()
-        let navMainView = UINavigationController(rootViewController: controller)
-        window.rootViewController = navMainView
+        let navController = UINavigationController()
+        let coordinator = Coordinator(nav: navController)
+        window.rootViewController = navController
+        coordinator.start()
         window.makeKeyAndVisible()
         self.window = window
     }
-
 }

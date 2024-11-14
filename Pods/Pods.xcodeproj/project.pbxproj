@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -40,12 +41,12 @@
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
 		48209DA9471F598EBDD86FE04793A29F /* Pods-FractalTT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FractalTT.release.xcconfig"; sourceTree = "<group>"; };
-		5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods-FractalTT */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-FractalTT"; path = Pods_FractalTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods_FractalTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E22F55539E48510C9A512E396B143F /* Pods-FractalTT-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FractalTT-acknowledgements.plist"; sourceTree = "<group>"; };
 		713A687E317B22D4C7E8237BCF149524 /* Pods-FractalTT.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FractalTT.modulemap"; sourceTree = "<group>"; };
 		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
 		94FD949D34D67B7BDB6964AB474816B4 /* Pods-FractalTT-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FractalTT-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A94394A33909C404BAFD2BAB14D06207 /* Pods-FractalTT-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FractalTT-dummy.m"; sourceTree = "<group>"; };
 		E5A232B16D0708380D9173B52DE122D7 /* Pods-FractalTT-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FractalTT-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +90,7 @@
 		785A69714A8BF1C8BC3675F86C51B9E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods-FractalTT */,
+				5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods_FractalTT.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,7 +137,6 @@
 			children = (
 				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -178,7 +178,7 @@
 			);
 			name = "Pods-FractalTT";
 			productName = Pods_FractalTT;
-			productReference = 5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods-FractalTT */;
+			productReference = 5DF5764B089B9C72BC86DC8EF9C1A42E /* Pods_FractalTT.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -199,8 +199,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 785A69714A8BF1C8BC3675F86C51B9E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
