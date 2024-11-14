@@ -9,7 +9,7 @@ final public class Coordinator: CoordinatorProtocol {
     }
 
     public func start() {
-        let viewController =  ViewController()
+        let viewController =  HomeFactory.make()
         nav.pushViewController(viewController, animated: false)
     }
 }
