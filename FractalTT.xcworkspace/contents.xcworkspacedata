@@ -5,6 +5,9 @@
       location = "group:FractalTT.xcodeproj">
    </FileRef>
    <FileRef
+      location = "container:Coordinator/Coordinator.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
