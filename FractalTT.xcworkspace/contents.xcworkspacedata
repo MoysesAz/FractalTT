@@ -5,15 +5,18 @@
       location = "group:FractalTT.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Networking/Networking.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:Coordinator/Coordinator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DesignSystem/DesignSystem.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Home/Home.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Networking/Networking.xcodeproj">
    </FileRef>
 </Workspace>
