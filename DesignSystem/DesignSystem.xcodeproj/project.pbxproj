@@ -21,8 +21,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9510D8972CE7F6650090316B /* DesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DesignSystem.xcodeproj; sourceTree = "<group>"; };
-		9510D89A2CE7F6690090316B /* DesignSystem.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = DesignSystem.xcodeproj; sourceTree = "<group>"; };
 		95E018202CE7BF0500FB1ACA /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E018282CE7BF0500FB1ACA /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -59,21 +57,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9510D8F62CE7F7540090316B /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9510D8F82CE7F7540090316B /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
 		95E018162CE7BF0500FB1ACA = {
 			isa = PBXGroup;
 			children = (
-				9510D89A2CE7F6690090316B /* DesignSystem.xcodeproj */,
-				9510D8972CE7F6650090316B /* DesignSystem.xcodeproj */,
 				95E018222CE7BF0500FB1ACA /* DesignSystem */,
 				95E0182C2CE7BF0500FB1ACA /* DesignSystemTests */,
 				95E018212CE7BF0500FB1ACA /* Products */,
@@ -179,16 +165,6 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 95E018212CE7BF0500FB1ACA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9510D8F82CE7F7540090316B /* Products */;
-					ProjectRef = 9510D89A2CE7F6690090316B /* DesignSystem.xcodeproj */;
-				},
-				{
-					ProductGroup = 9510D8F62CE7F7540090316B /* Products */;
-					ProjectRef = 9510D8972CE7F6650090316B /* DesignSystem.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				95E0181F2CE7BF0500FB1ACA /* DesignSystem */,
