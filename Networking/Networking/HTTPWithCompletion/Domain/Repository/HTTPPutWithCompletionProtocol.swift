@@ -9,4 +9,3 @@ public protocol HTTPPutWithCompletionProtocol {
                                responseType: T.Type,
                                completion: @escaping (Result<T, Error>) -> Void)
 }
-
