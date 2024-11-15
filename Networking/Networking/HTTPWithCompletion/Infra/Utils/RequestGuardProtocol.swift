@@ -16,7 +16,7 @@ extension RequestGuardProtocol {
         return newURL
     }
 
-    public func validateParameters(_ parameters: [String : Any]) throws -> Data {
+    public func validateParameters(_ parameters: [String: Any]) throws -> Data {
         do {
             Log.message("Parameters encoded as JSON: \(parameters)", .success)
             let data = try JSONSerialization.data(withJSONObject: parameters, options: [])
