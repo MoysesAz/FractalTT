@@ -12,6 +12,10 @@ extension HomeViewController: UITableViewDataSource {
         }
         return cell
     }
+
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.height * 0.12
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {

@@ -5,13 +5,12 @@ public protocol HomeViewProtocol {
 }
 
 final public class HomeView: UIView, HomeViewProtocol {
-     public var tableView: UITableView = {
+    public var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(HomeDrinkCell.self, forCellReuseIdentifier: HomeDrinkCell.identifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        tableView.rowHeight = 100
         return tableView
     }()
 

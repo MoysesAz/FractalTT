@@ -25,7 +25,7 @@ class HomeDrinkCell: UITableViewCell {
 
 extension HomeDrinkCell {
     private func setup() {
-        self.contentView.addSubview(drinkImage)
+        addSubview(drinkImage)
     }
 
     private func setupAllConstraints() {
@@ -36,10 +36,10 @@ extension HomeDrinkCell {
 extension HomeDrinkCell {
     private func drinkImageConstraints() {
         NSLayoutConstraint.activate([
-            drinkImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            drinkImage.heightAnchor.constraint(equalTo: heightAnchor),
-            drinkImage.widthAnchor.constraint(equalTo: widthAnchor),
-            drinkImage.leadingAnchor.constraint(equalTo: leadingAnchor)
+            drinkImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            drinkImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+            drinkImage.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6),
+            drinkImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
         ])
     }
 }
