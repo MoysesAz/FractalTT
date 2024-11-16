@@ -1,6 +1,12 @@
 import Foundation
 
-public class NetworkingWithCompletion {
+protocol NetworkWithCompletionProtocol {
+    func handler<T>(_ endpoint: Endpoint,
+                    responseType: T.Type,
+                    completion: @escaping (Result<T, any Error>) -> Void) where T: Decodable
+}
+
+public class NetworkingWithCompletion: NetworkWithCompletionProtocol {
     var get: HTTPGetWithCompletionProtocol
     var post: HTTPPostWithCompletionProtocol
     var delete: HTTPDeleteWithCompletionProtocol
