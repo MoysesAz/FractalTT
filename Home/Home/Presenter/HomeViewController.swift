@@ -5,6 +5,7 @@ final public class HomeViewController: UIViewController {
     let viewModel: HomeViewModelProtocol
     var contentView: HomeViewProtocol
     var flowdelegate: HomeFlowProtocol?
+    let searchController = UISearchController()
 
     init(contentView: some HomeViewProtocol = HomeView(),
          viewModel: some HomeViewModelProtocol = HomeViewModel()) {
@@ -25,6 +26,7 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        setupSearchBar()
         setTablewView()
     }
 
@@ -34,6 +36,12 @@ final public class HomeViewController: UIViewController {
         }
         homeView.collectionView.dataSource = self
         homeView.collectionView.delegate = self
+    }
+
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.searchTextField.placeholder = "Pesquise aqui"
     }
 
 }
