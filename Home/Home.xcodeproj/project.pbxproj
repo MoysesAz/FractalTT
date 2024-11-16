@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		951E6B3A2CE58331005EF371 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951E6B422CE58331005EF371 /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95EC8AF02CE8268700D93EC6 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -62,6 +63,7 @@
 			children = (
 				951E6B3C2CE58331005EF371 /* Home */,
 				951E6B462CE58331005EF371 /* HomeTests */,
+				95EC8AEF2CE8268700D93EC6 /* Frameworks */,
 				951E6B3B2CE58331005EF371 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +75,14 @@
 				951E6B422CE58331005EF371 /* HomeTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		95EC8AEF2CE8268700D93EC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95EC8AF02CE8268700D93EC6 /* DesignSystem.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
