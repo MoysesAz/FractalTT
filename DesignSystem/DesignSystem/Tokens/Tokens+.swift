@@ -6,7 +6,7 @@ extension Luxus.Tokens.Colors {
             UIColor(named: "Colors/Background/Primary") ?? .green
         }
         public static var lxSecondy: UIColor {
-            UIColor(named: "Colors/Background/Secondary")!
+            UIColor(named: "Colors/Background/Secondary") ?? .green
         }
     }
 }
@@ -14,7 +14,7 @@ extension Luxus.Tokens.Colors {
 extension Luxus.Tokens.Colors {
     public struct Font {
         public static var lxPrimary: UIColor {
-            return UIColor(named: "Colors/Background/Primary") ?? .green
+            return UIColor(named: "Colors/Font/Primary") ?? .green
         }
     }
 }
@@ -22,8 +22,7 @@ extension Luxus.Tokens.Colors {
 extension Luxus.Tokens.Colors {
     public struct Primary {
         public static var lxPrimary: UIColor {
-            BugFixColor.getColor(for: .init(red: 0.29, green: 0.56, blue: 0.89, alpha: 1),
-                                 dark: .init(red: 16, green: 31, blue: 41, alpha: 1))
+            return UIColor(named: "Colors/Primary/Primary") ?? .green
         }
     }
 }
