@@ -8,7 +8,6 @@ final public class HomeView: UIView, HomeViewProtocol {
     public var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(HomeDrinkCell.self, forCellWithReuseIdentifier: HomeDrinkCell.identifier)
@@ -39,14 +38,13 @@ extension HomeView {
 
     private func setupAllConstraints() {
         collectionViewConstraints()
-
     }
 }
 
 extension HomeView {
     private func collectionViewConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
