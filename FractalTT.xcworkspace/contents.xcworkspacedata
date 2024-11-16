@@ -17,6 +17,9 @@
       location = "group:Home/Home.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Commons/Commons.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
