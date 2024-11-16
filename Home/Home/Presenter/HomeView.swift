@@ -5,13 +5,16 @@ public protocol HomeViewProtocol {
 }
 
 final public class HomeView: UIView, HomeViewProtocol {
-    public var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(HomeDrinkCell.self, forCellReuseIdentifier: HomeDrinkCell.identifier)
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
-        return tableView
+    public var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(HomeDrinkCell.self, forCellWithReuseIdentifier: HomeDrinkCell.identifier)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .clear
+        return collectionView
     }()
 
     public override init(frame: CGRect) {
@@ -31,21 +34,22 @@ final public class HomeView: UIView, HomeViewProtocol {
 
 extension HomeView {
     private func setup() {
-        addSubview(tableView)
+        addSubview(collectionView)
     }
 
     private func setupAllConstraints() {
-        tableViewConstraints()
+        collectionViewConstraints()
+
     }
 }
 
 extension HomeView {
-    private func tableViewConstraints() {
+    private func collectionViewConstraints() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }

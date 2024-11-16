@@ -32,8 +32,8 @@ final public class HomeViewController: UIViewController {
         guard let homeView = contentView as? HomeView else {
             return
         }
-        homeView.tableView.dataSource = self
-        homeView.tableView.delegate = self
+        homeView.collectionView.dataSource = self
+        homeView.collectionView.delegate = self
     }
 
 }
