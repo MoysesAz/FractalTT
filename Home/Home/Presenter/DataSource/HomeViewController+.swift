@@ -2,7 +2,7 @@ import UIKit
 
 extension HomeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        viewModel.cacheCollectionView.count
     }
 
     public func collectionView(_ collectionView: UICollectionView,
@@ -39,5 +39,4 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-
 }

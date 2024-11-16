@@ -26,8 +26,13 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        setupApi()
         setupSearchBar()
         setTablewView()
+    }
+
+    private func setupApi() {
+        viewModel.getAllCharacters()
     }
 
     private func setTablewView() {

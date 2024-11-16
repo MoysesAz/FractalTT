@@ -1,11 +1,11 @@
 import Foundation
 
-struct CharacterModel: Codable {
-    var id: Int
-    var name: String
-    var status: String
-    var species: String
-    var type: String
-    var gender: String
-    var image: String
+public struct CharactersModel: Decodable {
+    public var id: Int
+    public var name: String
+    public var status: String
+    public var species: String
+    public var type: String
+    public var gender: String
+    public var image: String
 }

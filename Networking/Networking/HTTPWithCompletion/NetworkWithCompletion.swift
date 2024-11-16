@@ -1,6 +1,6 @@
 import Foundation
 
-protocol NetworkWithCompletionProtocol {
+public protocol NetworkWithCompletionProtocol {
     func handler<T>(_ endpoint: Endpoint,
                     responseType: T.Type,
                     completion: @escaping (Result<T, any Error>) -> Void) where T: Decodable

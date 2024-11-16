@@ -6,7 +6,7 @@ class HomeDrinkCell: UICollectionViewCell {
 
     lazy var drinkImage: UIImageView = {
         let drinkImage = UIImageView(frame: .zero)
-        drinkImage.image = UIImage(named: "Images/Bottle")
+        drinkImage.image = UIImage(named: "DefaultImage")
         drinkImage.translatesAutoresizingMaskIntoConstraints = false
         return drinkImage
     }()
@@ -14,7 +14,7 @@ class HomeDrinkCell: UICollectionViewCell {
     lazy var title: UILabel = {
         let title = UILabel(frame: .zero)
         title.textAlignment = .left
-        title.text = "Skol Beats"
+        title.text = "Default Text"
         title.font = UIFont.systemFont(ofSize: 18)
         title.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class HomeDrinkCell: UICollectionViewCell {
     lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel(frame: .zero)
         descriptionLabel.textAlignment = .left
-        descriptionLabel.text = "Vanilla Bean Infused Belgian Quad"
+        descriptionLabel.text = "Default Text"
         descriptionLabel.font = UIFont.systemFont(ofSize: 18)
         descriptionLabel.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
