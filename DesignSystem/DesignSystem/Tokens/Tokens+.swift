@@ -24,7 +24,14 @@ extension Luxux.Tokens.Colors {
     }
 }
 
-
+extension Luxux.Tokens.Colors {
+    public struct Primary {
+        public static var lxPrimary: UIColor {
+            BugFixColor.getColor(for: .init(red: 0.29, green: 0.56, blue: 0.89, alpha: 1),
+                                 dark: .init(red: 16, green: 31, blue: 41, alpha: 1))
+        }
+    }
+}
 
 extension Luxux.Tokens.Font {
         static func montserratMedium(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
