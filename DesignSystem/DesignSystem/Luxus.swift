@@ -1,12 +1,12 @@
 import UIKit
 
-public struct Luxux {}
+public struct Luxus {}
 
-extension Luxux {
+extension Luxus {
     public struct Tokens {}
 }
 
-extension Luxux.Tokens {
+extension Luxus.Tokens {
     public struct Colors {}
     public struct Font {}
 }

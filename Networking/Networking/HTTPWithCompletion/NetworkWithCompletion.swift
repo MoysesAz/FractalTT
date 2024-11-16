@@ -1,24 +1,24 @@
 import Foundation
 
-class NetworkingWithCompletion {
+public class NetworkingWithCompletion {
     var get: HTTPGetWithCompletionProtocol
     var post: HTTPPostWithCompletionProtocol
     var delete: HTTPDeleteWithCompletionProtocol
     var put: HTTPPutWithCompletionProtocol
 
-    init(get: HTTPGetWithCompletionProtocol = URLSessionGetWithCompletion(),
-         post: HTTPPostWithCompletionProtocol = URLSessionPostWithCompletion(),
-         delete: HTTPDeleteWithCompletionProtocol = URLSessionDeleteWithCompletion(),
-         put: HTTPPutWithCompletionProtocol = URLSessionPutWithCompletion()) {
+    public init(get: HTTPGetWithCompletionProtocol = URLSessionGetWithCompletion(),
+                post: HTTPPostWithCompletionProtocol = URLSessionPostWithCompletion(),
+                delete: HTTPDeleteWithCompletionProtocol = URLSessionDeleteWithCompletion(),
+                put: HTTPPutWithCompletionProtocol = URLSessionPutWithCompletion()) {
         self.get = get
         self.post = post
         self.delete = delete
         self.put = put
     }
 
-    func handler<T>(_ endpoint: Endpoint,
-                    responseType: T.Type,
-                    completion: @escaping (Result<T, any Error>) -> Void) where T: Decodable {
+    public func handler<T>(_ endpoint: Endpoint,
+                           responseType: T.Type,
+                           completion: @escaping (Result<T, any Error>) -> Void) where T: Decodable {
 
         switch endpoint.method {
         case .GET:

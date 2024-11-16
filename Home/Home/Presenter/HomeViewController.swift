@@ -1,4 +1,5 @@
 import UIKit
+import Networking
 
 final public class HomeViewController: UIViewController {
     let viewModel: HomeViewModelProtocol
@@ -22,4 +23,17 @@ final public class HomeViewController: UIViewController {
         }
         view = homeView
     }
+
+    public override func viewDidLoad() {
+        setTablewView()
+    }
+
+    private func setTablewView() {
+        guard let homeView = contentView as? HomeView else {
+            return
+        }
+        homeView.tableView.dataSource = self
+        homeView.tableView.delegate = self
+    }
+
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		951E6B432CE58331005EF371 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E6B3A2CE58331005EF371 /* Home.framework */; };
+		9570573B2CE8F40D00E8F3E2 /* Pokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570573A2CE8F40D00E8F3E2 /* Pokedex.swift */; };
+		9570573D2CE8F44100E8F3E2 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; };
+		9570573E2CE8F44100E8F3E2 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95EC8C7F2CE8CFB200D93EC6 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; };
+		95EC8C802CE8CFB200D93EC6 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,10 +25,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95EC8C812CE8CFB200D93EC6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9570573E2CE8F44100E8F3E2 /* Networking.framework in Embed Frameworks */,
+				95EC8C802CE8CFB200D93EC6 /* DesignSystem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		951E6B3A2CE58331005EF371 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951E6B422CE58331005EF371 /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9570573A2CE8F40D00E8F3E2 /* Pokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex.swift; sourceTree = "<group>"; };
+		9570573C2CE8F44100E8F3E2 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EC8AF02CE8268700D93EC6 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9570573D2CE8F44100E8F3E2 /* Networking.framework in Frameworks */,
+				95EC8C7F2CE8CFB200D93EC6 /* DesignSystem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 		951E6B302CE58331005EF371 = {
 			isa = PBXGroup;
 			children = (
+				957057392CE8F40600E8F3E2 /* Data */,
 				951E6B3C2CE58331005EF371 /* Home */,
 				951E6B462CE58331005EF371 /* HomeTests */,
 				95EC8AEF2CE8268700D93EC6 /* Frameworks */,
@@ -77,9 +103,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		957057392CE8F40600E8F3E2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9570573A2CE8F40D00E8F3E2 /* Pokedex.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		95EC8AEF2CE8268700D93EC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9570573C2CE8F44100E8F3E2 /* Networking.framework */,
+				95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */,
 				95EC8AF02CE8268700D93EC6 /* DesignSystem.framework */,
 			);
 			name = Frameworks;
@@ -106,6 +142,7 @@
 				951E6B362CE58331005EF371 /* Sources */,
 				951E6B372CE58331005EF371 /* Frameworks */,
 				951E6B382CE58331005EF371 /* Resources */,
+				95EC8C812CE8CFB200D93EC6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9570573B2CE8F40D00E8F3E2 /* Pokedex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,12 +297,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
@@ -302,11 +341,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
