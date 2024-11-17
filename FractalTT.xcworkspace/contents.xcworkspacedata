@@ -5,6 +5,9 @@
       location = "group:FractalTT.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:FractalData/FractalData.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Networking/Networking.xcodeproj">
    </FileRef>
    <FileRef

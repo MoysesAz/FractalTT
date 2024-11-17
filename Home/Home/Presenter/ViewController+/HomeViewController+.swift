@@ -7,8 +7,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeDrinkCell.identifier,
-                                                       for: indexPath) as? HomeDrinkCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeProductCell.identifier,
+                                                       for: indexPath) as? HomeProductCell else {
 
             return .init()
         }

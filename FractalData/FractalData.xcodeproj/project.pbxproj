@@ -7,88 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95C6C1382CE9646700932A03 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C12F2CE9646700932A03 /* Commons.framework */; };
+		955C7E0B2CEA7B2C00658A08 /* FractalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955C7E022CEA7B2C00658A08 /* FractalData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		95C6C1392CE9646700932A03 /* PBXContainerItemProxy */ = {
+		955C7E0C2CEA7B2C00658A08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 95C6C1262CE9646700932A03 /* Project object */;
+			containerPortal = 955C7DF92CEA7B2C00658A08 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95C6C12E2CE9646700932A03;
-			remoteInfo = Commons;
+			remoteGlobalIDString = 955C7E012CEA7B2C00658A08;
+			remoteInfo = FractalData;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		95C6C12F2CE9646700932A03 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95C6C1372CE9646700932A03 /* CommonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95C6C1552CE96BB400932A03 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955C7E022CEA7B2C00658A08 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955C7E0A2CEA7B2C00658A08 /* FractalDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		95C6C1312CE9646700932A03 /* Commons */ = {
+		955C7E042CEA7B2C00658A08 /* FractalData */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Commons;
+			path = FractalData;
 			sourceTree = "<group>";
 		};
-		95C6C13B2CE9646700932A03 /* CommonsTests */ = {
+		955C7E0E2CEA7B2C00658A08 /* FractalDataTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CommonsTests;
+			path = FractalDataTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		95C6C12C2CE9646700932A03 /* Frameworks */ = {
+		955C7DFF2CEA7B2C00658A08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C6C1342CE9646700932A03 /* Frameworks */ = {
+		955C7E072CEA7B2C00658A08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C6C1382CE9646700932A03 /* Commons.framework in Frameworks */,
+				955C7E0B2CEA7B2C00658A08 /* FractalData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95C6C1252CE9646700932A03 = {
+		955C7DF82CEA7B2C00658A08 = {
 			isa = PBXGroup;
 			children = (
-				95C6C1312CE9646700932A03 /* Commons */,
-				95C6C13B2CE9646700932A03 /* CommonsTests */,
-				95C6C1542CE96BB400932A03 /* Frameworks */,
-				95C6C1302CE9646700932A03 /* Products */,
+				955C7E042CEA7B2C00658A08 /* FractalData */,
+				955C7E0E2CEA7B2C00658A08 /* FractalDataTests */,
+				955C7E032CEA7B2C00658A08 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		95C6C1302CE9646700932A03 /* Products */ = {
+		955C7E032CEA7B2C00658A08 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95C6C12F2CE9646700932A03 /* Commons.framework */,
-				95C6C1372CE9646700932A03 /* CommonsTests.xctest */,
+				955C7E022CEA7B2C00658A08 /* FractalData.framework */,
+				955C7E0A2CEA7B2C00658A08 /* FractalDataTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		95C6C1542CE96BB400932A03 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				95C6C1552CE96BB400932A03 /* Networking.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		95C6C12A2CE9646700932A03 /* Headers */ = {
+		955C7DFD2CEA7B2C00658A08 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -98,100 +88,100 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		95C6C12E2CE9646700932A03 /* Commons */ = {
+		955C7E012CEA7B2C00658A08 /* FractalData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95C6C1402CE9646700932A03 /* Build configuration list for PBXNativeTarget "Commons" */;
+			buildConfigurationList = 955C7E132CEA7B2C00658A08 /* Build configuration list for PBXNativeTarget "FractalData" */;
 			buildPhases = (
-				95C6C12A2CE9646700932A03 /* Headers */,
-				95C6C12B2CE9646700932A03 /* Sources */,
-				95C6C12C2CE9646700932A03 /* Frameworks */,
-				95C6C12D2CE9646700932A03 /* Resources */,
+				955C7DFD2CEA7B2C00658A08 /* Headers */,
+				955C7DFE2CEA7B2C00658A08 /* Sources */,
+				955C7DFF2CEA7B2C00658A08 /* Frameworks */,
+				955C7E002CEA7B2C00658A08 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				95C6C1312CE9646700932A03 /* Commons */,
+				955C7E042CEA7B2C00658A08 /* FractalData */,
 			);
-			name = Commons;
+			name = FractalData;
 			packageProductDependencies = (
 			);
-			productName = Commons;
-			productReference = 95C6C12F2CE9646700932A03 /* Commons.framework */;
+			productName = FractalData;
+			productReference = 955C7E022CEA7B2C00658A08 /* FractalData.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95C6C1362CE9646700932A03 /* CommonsTests */ = {
+		955C7E092CEA7B2C00658A08 /* FractalDataTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95C6C1452CE9646700932A03 /* Build configuration list for PBXNativeTarget "CommonsTests" */;
+			buildConfigurationList = 955C7E182CEA7B2C00658A08 /* Build configuration list for PBXNativeTarget "FractalDataTests" */;
 			buildPhases = (
-				95C6C1332CE9646700932A03 /* Sources */,
-				95C6C1342CE9646700932A03 /* Frameworks */,
-				95C6C1352CE9646700932A03 /* Resources */,
+				955C7E062CEA7B2C00658A08 /* Sources */,
+				955C7E072CEA7B2C00658A08 /* Frameworks */,
+				955C7E082CEA7B2C00658A08 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				95C6C13A2CE9646700932A03 /* PBXTargetDependency */,
+				955C7E0D2CEA7B2C00658A08 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				95C6C13B2CE9646700932A03 /* CommonsTests */,
+				955C7E0E2CEA7B2C00658A08 /* FractalDataTests */,
 			);
-			name = CommonsTests;
+			name = FractalDataTests;
 			packageProductDependencies = (
 			);
-			productName = CommonsTests;
-			productReference = 95C6C1372CE9646700932A03 /* CommonsTests.xctest */;
+			productName = FractalDataTests;
+			productReference = 955C7E0A2CEA7B2C00658A08 /* FractalDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		95C6C1262CE9646700932A03 /* Project object */ = {
+		955C7DF92CEA7B2C00658A08 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					95C6C12E2CE9646700932A03 = {
+					955C7E012CEA7B2C00658A08 = {
 						CreatedOnToolsVersion = 16.1;
 						LastSwiftMigration = 1610;
 					};
-					95C6C1362CE9646700932A03 = {
+					955C7E092CEA7B2C00658A08 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
-			buildConfigurationList = 95C6C1292CE9646700932A03 /* Build configuration list for PBXProject "Commons" */;
+			buildConfigurationList = 955C7DFC2CEA7B2C00658A08 /* Build configuration list for PBXProject "FractalData" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 95C6C1252CE9646700932A03;
+			mainGroup = 955C7DF82CEA7B2C00658A08;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 95C6C1302CE9646700932A03 /* Products */;
+			productRefGroup = 955C7E032CEA7B2C00658A08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95C6C12E2CE9646700932A03 /* Commons */,
-				95C6C1362CE9646700932A03 /* CommonsTests */,
+				955C7E012CEA7B2C00658A08 /* FractalData */,
+				955C7E092CEA7B2C00658A08 /* FractalDataTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		95C6C12D2CE9646700932A03 /* Resources */ = {
+		955C7E002CEA7B2C00658A08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C6C1352CE9646700932A03 /* Resources */ = {
+		955C7E082CEA7B2C00658A08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,14 +191,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		95C6C12B2CE9646700932A03 /* Sources */ = {
+		955C7DFE2CEA7B2C00658A08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95C6C1332CE9646700932A03 /* Sources */ = {
+		955C7E062CEA7B2C00658A08 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -218,15 +208,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		95C6C13A2CE9646700932A03 /* PBXTargetDependency */ = {
+		955C7E0D2CEA7B2C00658A08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95C6C12E2CE9646700932A03 /* Commons */;
-			targetProxy = 95C6C1392CE9646700932A03 /* PBXContainerItemProxy */;
+			target = 955C7E012CEA7B2C00658A08 /* FractalData */;
+			targetProxy = 955C7E0C2CEA7B2C00658A08 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		95C6C1412CE9646700932A03 /* Debug */ = {
+		955C7E142CEA7B2C00658A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
@@ -255,7 +245,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.Commons;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
@@ -270,7 +260,7 @@
 			};
 			name = Debug;
 		};
-		95C6C1422CE9646700932A03 /* Release */ = {
+		955C7E152CEA7B2C00658A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
@@ -299,7 +289,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.Commons;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalData;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
@@ -313,7 +303,7 @@
 			};
 			name = Release;
 		};
-		95C6C1432CE9646700932A03 /* Debug */ = {
+		955C7E162CEA7B2C00658A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -377,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		95C6C1442CE9646700932A03 /* Release */ = {
+		955C7E172CEA7B2C00658A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -433,7 +423,7 @@
 			};
 			name = Release;
 		};
-		95C6C1462CE9646700932A03 /* Debug */ = {
+		955C7E192CEA7B2C00658A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
@@ -443,7 +433,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.CommonsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -454,7 +444,7 @@
 			};
 			name = Debug;
 		};
-		95C6C1472CE9646700932A03 /* Release */ = {
+		955C7E1A2CEA7B2C00658A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
@@ -464,7 +454,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.CommonsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
@@ -478,34 +468,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		95C6C1292CE9646700932A03 /* Build configuration list for PBXProject "Commons" */ = {
+		955C7DFC2CEA7B2C00658A08 /* Build configuration list for PBXProject "FractalData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95C6C1432CE9646700932A03 /* Debug */,
-				95C6C1442CE9646700932A03 /* Release */,
+				955C7E162CEA7B2C00658A08 /* Debug */,
+				955C7E172CEA7B2C00658A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95C6C1402CE9646700932A03 /* Build configuration list for PBXNativeTarget "Commons" */ = {
+		955C7E132CEA7B2C00658A08 /* Build configuration list for PBXNativeTarget "FractalData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95C6C1412CE9646700932A03 /* Debug */,
-				95C6C1422CE9646700932A03 /* Release */,
+				955C7E142CEA7B2C00658A08 /* Debug */,
+				955C7E152CEA7B2C00658A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95C6C1452CE9646700932A03 /* Build configuration list for PBXNativeTarget "CommonsTests" */ = {
+		955C7E182CEA7B2C00658A08 /* Build configuration list for PBXNativeTarget "FractalDataTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95C6C1462CE9646700932A03 /* Debug */,
-				95C6C1472CE9646700932A03 /* Release */,
+				955C7E192CEA7B2C00658A08 /* Debug */,
+				955C7E1A2CEA7B2C00658A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 95C6C1262CE9646700932A03 /* Project object */;
+	rootObject = 955C7DF92CEA7B2C00658A08 /* Project object */;
 }

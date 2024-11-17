@@ -12,7 +12,7 @@ final public class HomeView: UIView {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(HomeDrinkCell.self, forCellWithReuseIdentifier: HomeDrinkCell.identifier)
+        collectionView.register(HomeProductCell.self, forCellWithReuseIdentifier: HomeProductCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
         return collectionView
