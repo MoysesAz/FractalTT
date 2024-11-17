@@ -42,7 +42,7 @@ extension HomeViewModel: HomeViewModelProtocol {
                 self.endPoint.baseUrl = next
                 self.endPoint.path = ""
                 return
-            case .failure(_):
+            case .failure:
                 print("Error")
             }
         }

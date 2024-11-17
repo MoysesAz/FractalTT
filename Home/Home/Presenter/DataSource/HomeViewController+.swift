@@ -1,6 +1,5 @@
 import UIKit
 
-
 extension HomeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.cacheCollectionView.value?.count ?? 0
@@ -10,8 +9,6 @@ extension HomeViewController: UICollectionViewDataSource {
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeDrinkCell.identifier,
                                                        for: indexPath) as? HomeDrinkCell else {
-
-            
 
             return .init()
         }
