@@ -1,5 +1,6 @@
 import UIKit
 import Networking
+import DesignSystem
 
 final public class HomeViewController: UIViewController {
     let viewModel: HomeViewModelProtocol
@@ -26,17 +27,18 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        searchController.searchBar.backgroundColor = .white
         setupBinds()
         setupApi()
         setupSearchBar()
-        setTablewView()
+        setCollectionView()
     }
     private func setupBinds() {
         guard let homeView = contentView as? HomeView else {
             return
         }
 
-        viewModel.cacheCollectionView.bind { _ in
+        viewModel.filterCollectionView.bind { _ in
             DispatchQueue.main.async {
                 homeView.collectionView.reloadData()
             }
@@ -47,7 +49,7 @@ final public class HomeViewController: UIViewController {
         viewModel.getAllCharacters()
     }
 
-    private func setTablewView() {
+    private func setCollectionView() {
         guard let homeView = contentView as? HomeView else {
             return
         }
@@ -56,6 +58,7 @@ final public class HomeViewController: UIViewController {
     }
 
     private func setupSearchBar() {
+        searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.searchTextField.placeholder = "Pesquise aqui"

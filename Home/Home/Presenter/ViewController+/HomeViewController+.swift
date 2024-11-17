@@ -2,7 +2,7 @@ import UIKit
 
 extension HomeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.cacheCollectionView.value?.count ?? 0
+        viewModel.filterCollectionView.value.count
     }
 
     public func collectionView(_ collectionView: UICollectionView,
@@ -13,9 +13,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return .init()
         }
 
-        guard let character = viewModel.cacheCollectionView.value?[indexPath.row] else {
-            return cell
-        }
+        let character = viewModel.filterCollectionView.value[indexPath.row]
         cell.setupCell(character.name, description: character.status, urlImage: character.image)
 
         return cell
@@ -48,8 +46,29 @@ extension HomeViewController: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView,
                                willDisplay cell: UICollectionViewCell,
                                forItemAt indexPath: IndexPath) {
+
+        if searchController.searchBar.text != "" {
+            return
+        }
+
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             viewModel.getAllCharacters()
+        }
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    public func updateSearchResults(for searchController: UISearchController) {
+        guard let cacheCollection = viewModel.cacheCollectionView.value else { return }
+
+        let searchText = searchController.searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        if searchText.isEmpty {
+            viewModel.filterCollectionView.value = cacheCollection
+        } else {
+            viewModel.filterCollectionView.value = cacheCollection.filter {
+                $0.name.localizedCaseInsensitiveContains(searchText)
+            }
         }
     }
 }

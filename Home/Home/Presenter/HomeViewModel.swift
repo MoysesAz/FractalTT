@@ -5,12 +5,15 @@ import Commons
 protocol HomeViewModelProtocol {
     func getAllCharacters()
     var cacheCollectionView: BindableObject<[CharactersModel]?> { get set }
+    var filterCollectionView: BindableObject<[CharactersModel]> { get set }
+
 }
 
 public class HomeViewModel {
     private var network: NetworkWithCompletionProtocol
     private let endPoint: RickaAdMortyApiEndPoint
     public var cacheCollectionView: BindableObject<[CharactersModel]?> = BindableObject(nil)
+    public var filterCollectionView: BindableObject<[CharactersModel]> = BindableObject([])
 
     init(network: NetworkWithCompletionProtocol = NetworkingWithCompletion(),
          endPoint: RickaAdMortyApiEndPoint =  RickaAdMortyApiEndPoint()) {
@@ -20,13 +23,13 @@ public class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
-
     func getAllCharacters() {
         network.handler(endPoint, responseType: AllCharacteresModel.self) { result in
             switch result {
             case .success(let data):
                 if self.cacheCollectionView.value == nil {
                     self.cacheCollectionView.value = data.results
+                    self.filterCollectionView.value = self.cacheCollectionView.value!
                     guard let next = data.info.next else {
                         return
                     }
@@ -36,6 +39,8 @@ extension HomeViewModel: HomeViewModelProtocol {
                 }
 
                 self.cacheCollectionView.value! += data.results
+                self.filterCollectionView.value = self.cacheCollectionView.value!
+
                 guard let next = data.info.next else {
                     return
                 }
