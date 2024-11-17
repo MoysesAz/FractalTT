@@ -1,6 +1,6 @@
 import Foundation
 
-public class ObservableObject<T> {
+public class BindableObject<T> {
 
     public var value: T {
         didSet {
@@ -10,7 +10,7 @@ public class ObservableObject<T> {
 
     private var listener: ((T) -> Void)?
 
-    init(_ value: T) {
+    public init(_ value: T) {
         self.value = value
     }
 
