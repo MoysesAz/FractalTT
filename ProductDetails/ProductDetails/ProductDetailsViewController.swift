@@ -1,5 +1,6 @@
 import UIKit
 import Home
+import FractalData
 
 final public class ProductDetailsViewController: UIViewController {
     let viewModel: ProductDetailsModelProtocol

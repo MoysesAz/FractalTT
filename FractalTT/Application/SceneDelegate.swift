@@ -7,6 +7,9 @@
 
 import UIKit
 import Coordinator
+import CoreData
+import FractalData
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -16,10 +19,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let navController = UINavigationController()
-        let coordinator = MainCoordinator(nav: navController)
-        window.rootViewController = navController
-        coordinator.start()
-        window.makeKeyAndVisible()
-        self.window = window
+
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            let managerData = ManagerData(appDelegate.persistentContainer.viewContext)
+            let coordinator = MainCoordinator(nav: navController, managerData: managerData)
+            window.rootViewController = navController
+            coordinator.start()
+            window.makeKeyAndVisible()
+            self.window = window
+            return
+        } else {
+            let managerData = ManagerData(nil)
+            let coordinator = MainCoordinator(nav: navController, managerData: managerData)
+            window.rootViewController = navController
+            coordinator.start()
+            window.makeKeyAndVisible()
+            self.window = window
+            return
+        }
     }
 }

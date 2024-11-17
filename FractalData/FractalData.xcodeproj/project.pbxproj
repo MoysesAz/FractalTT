@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		955C7E0B2CEA7B2C00658A08 /* FractalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955C7E022CEA7B2C00658A08 /* FractalData.framework */; };
+		95B6BB3B2CEAA97E0093FDF2 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B6BB3A2CEAA97E0093FDF2 /* Commons.framework */; };
+		95B6BB3C2CEAA97E0093FDF2 /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95B6BB3A2CEAA97E0093FDF2 /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,9 +22,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95B6BB3D2CEAA97E0093FDF2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95B6BB3C2CEAA97E0093FDF2 /* Commons.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		955C7E022CEA7B2C00658A08 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955C7E0A2CEA7B2C00658A08 /* FractalDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FractalDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B6BB3A2CEAA97E0093FDF2 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B6BB3B2CEAA97E0093FDF2 /* Commons.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +80,7 @@
 			children = (
 				955C7E042CEA7B2C00658A08 /* FractalData */,
 				955C7E0E2CEA7B2C00658A08 /* FractalDataTests */,
+				95B6BB392CEAA97E0093FDF2 /* Frameworks */,
 				955C7E032CEA7B2C00658A08 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +92,14 @@
 				955C7E0A2CEA7B2C00658A08 /* FractalDataTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		95B6BB392CEAA97E0093FDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95B6BB3A2CEAA97E0093FDF2 /* Commons.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +123,7 @@
 				955C7DFE2CEA7B2C00658A08 /* Sources */,
 				955C7DFF2CEA7B2C00658A08 /* Frameworks */,
 				955C7E002CEA7B2C00658A08 /* Resources */,
+				95B6BB3D2CEAA97E0093FDF2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
