@@ -1,21 +1,39 @@
 import UIKit
-
 extension UIImageView {
+    private static let imageCache = NSCache<NSString, UIImage>()
+
     public func networkImage(_ urlImage: String) {
+        let cacheKey = NSString(string: urlImage)
+
+        if let cachedImage = UIImageView.imageCache.object(forKey: cacheKey) {
+            self.image = cachedImage
+            return
+        }
+
         Task {
-                    if let url = URL(string: urlImage) {
-                        do {
-                            let (data, _) = try await URLSession.shared.data(from: url)
-                            if UIImage(data: data) != nil {
-                                // Atualizar a imagem na Main Thread
-                                DispatchQueue.main.async {
-                                    self.image? = UIImage(data: data) ?? UIImage(named: "DefaultImage")!
-                                }
-                            }
-                        } catch {
-                            print("Erro ao carregar imagem: \(error)")
+            if let url = URL(string: urlImage) {
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: url)
+                    if let image = UIImage(data: data) {
+                        UIImageView.imageCache.setObject(image, forKey: cacheKey)
+                        Log.message("url: \(urlImage) returned a image", .success)
+
+                        DispatchQueue.main.async {
+                            self.image = image
                         }
+                    } else {
+                        Log.message("Data is not an image", .failure)
+                        DispatchQueue.main.async {
+                            self.image = UIImage(named: "DefaultImage")
+                        }
+                    }
+                } catch {
+                    Log.message(error.localizedDescription, .failure)
+                    DispatchQueue.main.async {
+                        self.image = UIImage(named: "DefaultImage")
                     }
                 }
             }
+        }
+    }
 }
