@@ -27,15 +27,13 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
-        searchController.searchBar.backgroundColor = .white
-        title = "Home"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.tintColor = .white
+        setupItensInNavigation()
         setupBinds()
         setupApi()
         setupSearchBar()
-        setCollectionView()
+        setupCollectionView()
     }
+
     private func setupBinds() {
         guard let homeView = contentView as? HomeView else {
             return
@@ -48,11 +46,18 @@ final public class HomeViewController: UIViewController {
         }
     }
 
+    private func setupItensInNavigation() {
+        searchController.searchBar.backgroundColor = .clear
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        title = "Home"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
     private func setupApi() {
         viewModel.getAllCharacters()
     }
 
-    private func setCollectionView() {
+    private func setupCollectionView() {
         guard let homeView = contentView as? HomeView else {
             return
         }
