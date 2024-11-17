@@ -50,6 +50,16 @@ class HomeDrinkCell: UICollectionViewCell {
 }
 
 extension HomeDrinkCell {
+    public func setupCell(_ tag: String, description: String, urlImage: String) {
+        DispatchQueue.main.async {
+            self.title.text = tag
+            self.descriptionLabel.text = description
+        }
+        drinkImage.networkImage(urlImage)
+    }
+}
+
+extension HomeDrinkCell {
     private func setup() {
         addSubview(drinkImage)
         addSubview(title)

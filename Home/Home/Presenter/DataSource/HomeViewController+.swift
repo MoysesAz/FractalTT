@@ -2,7 +2,7 @@ import UIKit
 
 extension HomeViewController: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.cacheCollectionView.count
+        viewModel.cacheCollectionView.value?.count ?? 0
     }
 
     public func collectionView(_ collectionView: UICollectionView,
@@ -11,6 +11,11 @@ extension HomeViewController: UICollectionViewDataSource {
                                                        for: indexPath) as? HomeDrinkCell else {
             fatalError()
         }
+
+        guard let character = viewModel.cacheCollectionView.value?[indexPath.row] else {
+            return cell
+        }
+        cell.setupCell(character.name, description: character.status, urlImage: character.image)
 
         return cell
 
@@ -39,4 +44,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView,
+                               willDisplay cell: UICollectionViewCell,
+                               forItemAt indexPath: IndexPath) {
+        if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+            print("Última célula visível!")
+            viewModel.getAllCharacters()
+        }
+    }
 }

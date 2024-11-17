@@ -1,15 +1,16 @@
 import Foundation
 import Networking
+import Commons
 
 protocol HomeViewModelProtocol {
-    var cacheCollectionView: [CharactersModel] { get }
     func getAllCharacters()
+    var cacheCollectionView: BindableObject<[CharactersModel]?> { get set }
 }
 
 public class HomeViewModel {
     private var network: NetworkWithCompletionProtocol
     private let endPoint: RickaAdMortyApiEndPoint
-    private var _cacheCollectionView: [CharactersModel] = []
+    public var cacheCollectionView: BindableObject<[CharactersModel]?> = BindableObject(nil)
 
     init(network: NetworkWithCompletionProtocol = NetworkingWithCompletion(),
          endPoint: RickaAdMortyApiEndPoint =  RickaAdMortyApiEndPoint()) {
@@ -19,13 +20,28 @@ public class HomeViewModel {
 }
 
 extension HomeViewModel: HomeViewModelProtocol {
-    var cacheCollectionView: [CharactersModel] { get {return self._cacheCollectionView }}
 
     func getAllCharacters() {
-        network.handler(endPoint, responseType: [CharactersModel].self) { result in
+        network.handler(endPoint, responseType: AllCharacteresModel.self) { result in
             switch result {
             case .success(let data):
-                print(data)
+                if self.cacheCollectionView.value == nil {
+                    self.cacheCollectionView.value = data.results
+                    guard let next = data.info.next else {
+                        return
+                    }
+                    self.endPoint.baseUrl = next
+                    self.endPoint.path = ""
+                    return
+                }
+
+                self.cacheCollectionView.value! += data.results
+                guard let next = data.info.next else {
+                    return
+                }
+                self.endPoint.baseUrl = next
+                self.endPoint.path = ""
+                return
             case .failure(_):
                 print("Error")
             }

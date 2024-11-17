@@ -4,7 +4,7 @@ import Networking
 final class RickaAdMortyApiEndPoint: Endpoint {
     var baseUrl: String = "https://rickandmortyapi.com/api"
 
-    var path: String = "/character/1,183"
+    var path: String = "/character"
 
     var method: Networking.HTTPMethod = .GET
 

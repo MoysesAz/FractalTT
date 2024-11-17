@@ -26,9 +26,21 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        setupBinds()
         setupApi()
         setupSearchBar()
         setTablewView()
+    }
+    private func setupBinds() {
+        guard let homeView = contentView as? HomeView else {
+            return
+        }
+
+        viewModel.cacheCollectionView.bind { _ in
+            DispatchQueue.main.async {
+                homeView.collectionView.reloadData()
+            }
+        }
     }
 
     private func setupApi() {

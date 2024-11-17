@@ -1,5 +1,16 @@
 import Foundation
 
+public struct AllCharacteresModel: Decodable {
+    public var info: InfoModel
+    public var results: [CharactersModel]
+}
+
+public struct InfoModel: Decodable {
+    public var prev: String?
+    public var next: String?
+
+}
+
 public struct CharactersModel: Decodable {
     public var id: Int
     public var name: String
