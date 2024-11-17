@@ -69,6 +69,12 @@ extension HomeViewController: UISearchResultsUpdating {
             viewModel.filterCollectionView.value = cacheCollection.filter {
                 $0.name.localizedCaseInsensitiveContains(searchText)
             }
+
+            if viewModel.filterCollectionView.value.isEmpty {
+                contentView.emptySearchViewOn()
+            } else {
+                contentView.emptySearchViewOff()
+            }
         }
     }
 }

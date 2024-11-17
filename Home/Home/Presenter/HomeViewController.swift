@@ -28,6 +28,9 @@ final public class HomeViewController: UIViewController {
 
     public override func viewDidLoad() {
         searchController.searchBar.backgroundColor = .white
+        title = "Home"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
         setupBinds()
         setupApi()
         setupSearchBar()

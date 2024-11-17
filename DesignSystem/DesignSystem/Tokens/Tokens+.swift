@@ -24,6 +24,11 @@ extension Luxus.Tokens.Colors {
         public static var lxPrimary: UIColor {
             return UIColor(named: "Colors/Primary/Primary") ?? .green
         }
+
+        public static var lxSecondary: UIColor {
+            return UIColor(named: "Colors/Primary/Secondary") ?? .green
+        }
+
     }
 }
 
