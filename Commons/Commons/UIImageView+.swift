@@ -6,6 +6,7 @@ extension UIImageView {
         let cacheKey = NSString(string: urlImage)
 
         if let cachedImage = UIImageView.imageCache.object(forKey: cacheKey) {
+            Log.message("Image already exists in cache with key: \(urlImage)", .success)
             self.image = cachedImage
             return
         }
