@@ -1,13 +1,13 @@
 import Foundation
 
-enum LogMessageOption {
+public enum LogMessageOption {
     case failure
     case success
     case warning
 }
 
-struct Log {
-    static func data(_ data: Data, encoder: String.Encoding = .utf8) {
+public struct Log {
+    public static func data(_ data: Data, encoder: String.Encoding = .utf8) {
         #if DEBUG
         print("========DATA===========")
         let object = String(data: data, encoding: encoder)
@@ -20,7 +20,7 @@ struct Log {
         #endif
     }
 
-    static func message(_ content: String, _ option: LogMessageOption) {
+    public static func message(_ content: String, _ option: LogMessageOption) {
         #if DEBUG
         let message: String
 
@@ -37,7 +37,7 @@ struct Log {
         #endif
     }
 
-    static func request(_ request: URLRequest) {
+    public static func request(_ request: URLRequest) {
         #if DEBUG
         print("========REQUEST===========")
         print("URL: \(String(describing: request.url))")
@@ -51,7 +51,7 @@ struct Log {
         #endif
     }
 
-    static func response(_ response: HTTPURLResponse) {
+    public static func response(_ response: HTTPURLResponse) {
         #if DEBUG
         print("========RESPONSE===========")
         if response.statusCode < 300, response.statusCode >= 200 {

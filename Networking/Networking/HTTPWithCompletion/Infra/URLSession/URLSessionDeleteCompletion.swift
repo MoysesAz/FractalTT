@@ -1,4 +1,5 @@
 import Foundation
+import Commons
 
 final public class URLSessionDeleteWithCompletion: HTTPDeleteWithCompletionProtocol,
                                                  RequestGuardProtocol,
