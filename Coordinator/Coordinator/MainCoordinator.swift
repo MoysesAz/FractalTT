@@ -1,8 +1,9 @@
 import UIKit
 import Home
 import DesignSystem
+import ProductDetails
 
-final public class Coordinator: CoordinatorProtocol {
+final public class MainCoordinator: CoordinatorProtocol {
     var nav: UINavigationController
 
     public init(nav: UINavigationController) {
@@ -20,7 +21,14 @@ final public class Coordinator: CoordinatorProtocol {
         nav.navigationBar.scrollEdgeAppearance = appearance
         nav.navigationBar.compactAppearance = appearance
 
-        let viewController = HomeFactory.make()
+        let viewController = HomeFactory.make(self)
         nav.pushViewController(viewController, animated: false)
+    }
+}
+
+extension MainCoordinator: HomeFlowProtocol {
+    public func showDetailsView(_ drink: Home.CharactersModel) {
+        let viewController = ProductDetailsViewController(drink)
+        nav.pushViewController(viewController, animated: true)
     }
 }

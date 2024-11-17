@@ -26,22 +26,9 @@
 		95C6C1552CE96BB400932A03 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		95C6C13F2CE9646700932A03 /* Exceptions for "Commons" folder in "Commons" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			publicHeaders = (
-				Commons.h,
-			);
-			target = 95C6C12E2CE9646700932A03 /* Commons */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		95C6C1312CE9646700932A03 /* Commons */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				95C6C13F2CE9646700932A03 /* Exceptions for "Commons" folder in "Commons" target */,
-			);
 			path = Commons;
 			sourceTree = "<group>";
 		};

@@ -6,7 +6,6 @@ protocol HomeViewModelProtocol {
     func getAllCharacters()
     var cacheCollectionView: BindableObject<[CharactersModel]?> { get set }
     var filterCollectionView: BindableObject<[CharactersModel]> { get set }
-
 }
 
 public class HomeViewModel {

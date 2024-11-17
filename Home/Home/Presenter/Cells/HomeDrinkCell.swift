@@ -8,6 +8,7 @@ class HomeDrinkCell: UICollectionViewCell {
         let drinkImage = UIImageView(frame: .zero)
         drinkImage.image = UIImage(named: "DefaultImage")
         drinkImage.translatesAutoresizingMaskIntoConstraints = false
+        drinkImage.makeRounded(10)
         return drinkImage
     }()
 

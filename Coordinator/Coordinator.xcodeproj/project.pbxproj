@@ -10,6 +10,8 @@
 		951E6ABF2CE5736B005EF371 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E6AB62CE5736B005EF371 /* Coordinator.framework */; };
 		95C6C1712CEA1B9700932A03 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1702CEA1B9700932A03 /* DesignSystem.framework */; };
 		95C6C1722CEA1B9700932A03 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1702CEA1B9700932A03 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95C6C31A2CEA62E900932A03 /* ProductDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C3192CEA62E900932A03 /* ProductDetails.framework */; };
+		95C6C31B2CEA62E900932A03 /* ProductDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C3192CEA62E900932A03 /* ProductDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95E017002CE6075300FB1ACA /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; };
 		95E017012CE6075300FB1ACA /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -31,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				95C6C31B2CEA62E900932A03 /* ProductDetails.framework in Embed Frameworks */,
 				95E017012CE6075300FB1ACA /* Home.framework in Embed Frameworks */,
 				95C6C1722CEA1B9700932A03 /* DesignSystem.framework in Embed Frameworks */,
 			);
@@ -43,6 +46,8 @@
 		951E6AB62CE5736B005EF371 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951E6ABE2CE5736B005EF371 /* CoordinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6C1702CEA1B9700932A03 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C6C3192CEA62E900932A03 /* ProductDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProductDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C6C31C2CEA65CA00932A03 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E016FF2CE6075300FB1ACA /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C6C31A2CEA62E900932A03 /* ProductDetails.framework in Frameworks */,
 				95E017002CE6075300FB1ACA /* Home.framework in Frameworks */,
 				95C6C1712CEA1B9700932A03 /* DesignSystem.framework in Frameworks */,
 			);
@@ -102,6 +108,8 @@
 		95E016FE2CE6075300FB1ACA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95C6C31C2CEA65CA00932A03 /* Commons.framework */,
+				95C6C3192CEA62E900932A03 /* ProductDetails.framework */,
 				95C6C1702CEA1B9700932A03 /* DesignSystem.framework */,
 				95E016FF2CE6075300FB1ACA /* Home.framework */,
 			);
@@ -276,6 +284,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.Coordinator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -310,6 +322,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.Coordinator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -451,6 +467,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.CoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,6 +486,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.CoordinatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

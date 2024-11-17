@@ -49,6 +49,7 @@ final public class HomeViewController: UIViewController {
     private func setupItensInNavigation() {
         searchController.searchBar.backgroundColor = .clear
         searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.placeholder = "Search by name characters"
         title = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
