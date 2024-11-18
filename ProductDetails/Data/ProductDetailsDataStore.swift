@@ -11,7 +11,7 @@ public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
 
     public func getProduct(byProductName product: String) -> [Products]? {
         guard let context = viewContext else {
-            Log.message("ManagerData(getProducts) - no viewContext", .warning)
+            Log.message("ProductDetailsDataStore(getProducts) - no viewContext", .warning)
             return nil
         }
 
@@ -22,14 +22,14 @@ public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
             let products = try context.fetch(fetchRequest)
 
             if products.isEmpty {
-                Log.message("ManagerData(getProducts) - No products found with name '\(product)'", .warning)
+                Log.message("ProductDetailsDataStore(getProducts) - No products found with name '\(product)'", .warning)
                 return nil
             } else {
-                Log.message("ManagerData(getProducts) - Products with name '\(product)' fetched successfully", .success)
+                Log.message("ProductDetailsDataStore(getProducts) - Products with name '\(product)' fetched successfully", .success)
                 return products
             }
         } catch {
-            Log.message("ManagerData(getProducts) - fetch request failed -> \(error)", .failure)
+            Log.message("ProductDetailsDataStore(getProducts) - fetch request failed -> \(error)", .failure)
             return nil
         }
     }
@@ -39,14 +39,14 @@ public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
             let products = try viewContext?.fetch(Products.fetchRequest())
             return products
         } catch {
-            Log.message("ManagerData(getAllProducts) - context save -> \(error)", .failure)
+            Log.message("ProductDetailsDataStore(getAllProducts) - context save -> \(error)", .failure)
         }
         return nil
     }
 
     public func createProduct(product: String, tag: String, productDescription: String, image: Data) -> Bool {
         guard let context = viewContext else {
-            Log.message("ManagerData(createProduct) - no viewContext", .warning)
+            Log.message("ProductDetailsDataStore(createProduct) - no viewContext", .warning)
             return false
         }
 
@@ -56,11 +56,11 @@ public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
         do {
             let existingProducts = try context.fetch(fetchRequest)
             if !existingProducts.isEmpty {
-                Log.message("ManagerData(createProduct) - Produto com tag \(product) já existe", .warning)
+                Log.message("ProductDetailsDataStore(createProduct) - Produto com tag \(product) já existe", .warning)
                 return false
             }
         } catch {
-            Log.message("ManagerData(createProduct) - Erro ao verificar duplicatas: \(error)", .failure)
+            Log.message("ProductDetailsDataStore(createProduct) - Erro ao verificar duplicatas: \(error)", .failure)
             return false
         }
 
