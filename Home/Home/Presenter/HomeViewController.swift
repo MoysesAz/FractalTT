@@ -67,7 +67,8 @@ final public class HomeViewController: UIViewController {
     private func setupSearchBar() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.backgroundColor = Luxus.Tokens.Colors.Background.lxPrimary
+        searchController.searchBar.searchTextField.textColor = .red
         searchController.searchBar.backgroundColor = .clear
         searchController.searchBar.searchTextField.placeholder = "Search for a product"
         navigationItem.searchController = searchController

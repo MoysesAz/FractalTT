@@ -16,7 +16,7 @@ final public class MainCoordinator: CoordinatorProtocol {
     public func start() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = Luxus.Tokens.Colors.Primary.lxSecondary
+        appearance.backgroundColor = Luxus.Tokens.Colors.Primary.lxPrimary
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 
