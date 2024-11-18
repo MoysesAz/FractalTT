@@ -32,14 +32,6 @@ class SavedProductsGalleryCell: UICollectionViewCell {
         return nameProductLabel
     }()
 
-    lazy var nextPageImage: UIImageView = {
-        let nextPageImage = UIImageView(frame: .zero)
-        nextPageImage.image = UIImage(systemName: "chevron.right")
-        nextPageImage.tintColor = Luxus.Tokens.Colors.Font.lxPrimary
-        nextPageImage.translatesAutoresizingMaskIntoConstraints = false
-        return nextPageImage
-    }()
-
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
         backgroundColor = Luxus.Tokens.Colors.Background.lxSecondy
@@ -65,14 +57,12 @@ extension SavedProductsGalleryCell {
         addSubview(productImage)
         addSubview(tagTitle)
         addSubview(nameProductLabel)
-        addSubview(nextPageImage)
     }
 
     private func setupAllConstraints() {
         productImageConstraints()
         tagTitleConstraints()
         nameProductLabelConstraints()
-        nextPageImageConstraints()
     }
 }
 
@@ -90,7 +80,7 @@ extension SavedProductsGalleryCell {
         NSLayoutConstraint.activate([
             tagTitle.bottomAnchor.constraint(equalTo: centerYAnchor),
             tagTitle.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: frame.height * 0.1),
-            tagTitle.trailingAnchor.constraint(equalTo: nextPageImage.leadingAnchor, constant: frame.height * -0.2)
+            tagTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: frame.height * -0.4)
         ])
     }
 
@@ -99,15 +89,6 @@ extension SavedProductsGalleryCell {
             nameProductLabel.topAnchor.constraint(equalTo: centerYAnchor),
             nameProductLabel.leadingAnchor.constraint(equalTo: tagTitle.leadingAnchor),
             nameProductLabel.trailingAnchor.constraint(equalTo: tagTitle.trailingAnchor)
-        ])
-    }
-
-    private func nextPageImageConstraints() {
-        NSLayoutConstraint.activate([
-            nextPageImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            nextPageImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.22),
-            nextPageImage.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.14),
-            nextPageImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ])
     }
 }
