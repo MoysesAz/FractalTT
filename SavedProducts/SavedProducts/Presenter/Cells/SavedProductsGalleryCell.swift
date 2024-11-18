@@ -5,11 +5,11 @@ class SavedProductsGalleryCell: UICollectionViewCell {
     static let identifier = "SavedProductsGalleryCell"
 
     lazy var productImage: UIImageView = {
-        let drinkImage = UIImageView(frame: .zero)
-        drinkImage.image = UIImage(named: "DefaultImage")
-        drinkImage.translatesAutoresizingMaskIntoConstraints = false
-        drinkImage.makeRounded(10)
-        return drinkImage
+        let productImage = UIImageView(frame: .zero)
+        productImage.image = UIImage(named: "DefaultImage")
+        productImage.translatesAutoresizingMaskIntoConstraints = false
+        productImage.makeRounded(10)
+        return productImage
     }()
 
     lazy var tagTitle: UILabel = {
