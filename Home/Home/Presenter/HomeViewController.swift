@@ -53,7 +53,7 @@ final public class HomeViewController: UIViewController {
     }
 
     private func setupNavigation() {
-        title = "Home"
+        title = "Beer List"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "folder"),
                                                             style: .done,
