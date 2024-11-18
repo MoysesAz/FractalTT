@@ -1,9 +1,13 @@
 import Foundation
 import Commons
 
-protocol RequestGuardProtocol {}
+public protocol RequestValidatorProtocol {
+    func validateURLString(_ url: String?) throws -> URL
+    func validateParameters(_ parameters: [String: Any]) throws -> Data
+}
 
-extension RequestGuardProtocol {
+final public class RequestValidator: RequestValidatorProtocol {
+    public init() {}
     public func validateURLString(_ url: String?) throws -> URL {
         guard let urlString = url else {
             Log.message("Url is Null", .failure)

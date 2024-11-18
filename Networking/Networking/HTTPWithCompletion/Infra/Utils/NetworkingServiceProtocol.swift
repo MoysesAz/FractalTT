@@ -1,10 +1,14 @@
 import Foundation
 import Commons
 
-protocol URLRequestWithCompletionProtocol {}
+public protocol NetworkingServiceProtocol {
+    func executeRequest<T: Decodable>(_ urlRequest: URLRequest, completion: @escaping (Result<T, Error>) -> Void)
+}
 
-extension URLRequestWithCompletionProtocol {
-    public func request<T: Decodable>(_ urlRequest: URLRequest, completion: @escaping ((Result<T, Error>) -> Void)) {
+final public class NetworkingService: NetworkingServiceProtocol {
+    public init() {}
+    public func executeRequest<T: Decodable>(_ urlRequest: URLRequest,
+                                             completion: @escaping (Result<T, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
 
             if let error = error {
