@@ -55,6 +55,10 @@ final public class HomeViewController: UIViewController {
     private func setupNavigation() {
         title = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "folder"),
+                                                            style: .done,
+                                                            target: self,
+                                                            action: nil)
         setupSearchBar()
     }
 
