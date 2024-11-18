@@ -1,13 +1,17 @@
 import CoreData
-import Commons
+import FractalData
 
-public protocol ManagerDataProtocol {
-    var viewContext: NSManagedObjectContext? { get set }
-    func getAllProducts() -> [Products]?
+public protocol ProductDetailsDataStoreProtocol {
+    func getProduct(byProductName product: String) -> [Products]?
+    func createProduct(product: String, tag: String, productDescription: String, image: Data) -> Bool
+    func deleteProduct(byProductName product: String) -> Bool
+}
+
+public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
+    var viewContext: NSManagedObjectContext?
     func getProducts(byProductName product: String) -> [Products]?
     func createProduct(tag: String, productDescription: String, product: String, image: Data) -> Bool
     func deleteProduct(byProductName product: String) -> Bool
-    init(_ viewContext: NSManagedObjectContext?)
 }
 
 public final class ManagerData: ManagerDataProtocol {

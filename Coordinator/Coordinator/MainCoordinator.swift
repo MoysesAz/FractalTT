@@ -1,15 +1,15 @@
 import UIKit
+import CoreData
 import Home
 import DesignSystem
 import ProductDetails
-import FractalData
 
 final public class MainCoordinator: CoordinatorProtocol {
-    var managerData: ManagerDataProtocol
+    var coreDataContext: NSManagedObjectContext?
     var nav: UINavigationController
 
-    public init(nav: UINavigationController, managerData: ManagerDataProtocol) {
-        self.managerData = managerData
+    public init(nav: UINavigationController, coreDataContext: NSManagedObjectContext? = nil) {
+        self.coreDataContext = coreDataContext
         self.nav = nav
     }
 

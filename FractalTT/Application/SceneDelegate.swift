@@ -8,7 +8,6 @@
 import UIKit
 import Coordinator
 import CoreData
-import FractalData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

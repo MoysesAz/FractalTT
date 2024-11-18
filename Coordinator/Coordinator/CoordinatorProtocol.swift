@@ -1,9 +1,9 @@
 import UIKit
-import FractalData
+import CoreData
 
 protocol CoordinatorProtocol {
     var nav: UINavigationController {get set}
-    var managerData: ManagerDataProtocol { get set }
-    init(nav: UINavigationController, managerData: ManagerDataProtocol)
+    var coreDataContext: NSManagedObjectContext? { get set }
+    init(nav: UINavigationController)
     func start()
 }
