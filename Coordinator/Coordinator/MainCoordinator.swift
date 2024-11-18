@@ -1,4 +1,5 @@
 import UIKit
+import SavedProducts
 import CoreData
 import Home
 import DesignSystem
@@ -31,6 +32,13 @@ final public class MainCoordinator: CoordinatorProtocol {
 }
 
 extension MainCoordinator: HomeFlowProtocol {
+    public func showGalery() {
+        let dataStore = SavedProductsDataStore(coreDataContext)
+        let viewModel = SavedProductsViewModel(dataStore: dataStore)
+        let viewController = SavedProductsViewController(viewModel: viewModel)
+        nav.pushViewController(viewController, animated: true)
+    }
+
     public func showDetailsView(_ productModel: ProductsModel) {
         let dataStore = ProductDetailsDataStore(coreDataContext)
         let viewModel = ProductDetailsViewModel(dataStore: dataStore, productModel: productModel)

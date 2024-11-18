@@ -7,7 +7,7 @@ final public class SavedProductsViewController: UIViewController {
     var contentView: SavedProductsViewProtocol
     var flowdelegate: SavedProductsFlowProtocol?
 
-    init(contentView: some SavedProductsViewProtocol = SavedProductsView(),
+    public init(contentView: some SavedProductsViewProtocol = SavedProductsView(),
          viewModel: some SavedProductsViewModelProtocol = SavedProductsViewModel()) {
         self.contentView = contentView
         self.viewModel = viewModel
@@ -35,7 +35,7 @@ final public class SavedProductsViewController: UIViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
 
     }
 

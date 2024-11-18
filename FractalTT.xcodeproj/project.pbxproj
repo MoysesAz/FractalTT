@@ -10,6 +10,8 @@
 		1CC34CADAC5DDFA32D23888F /* Pods_FractalTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9F198219D1E868575DEFB6 /* Pods_FractalTT.framework */; };
 		955C7DF02CEA675D00658A08 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955C7DEF2CEA675D00658A08 /* Coordinator.framework */; };
 		955C7DF12CEA675D00658A08 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955C7DEF2CEA675D00658A08 /* Coordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95A6BB9F2CEBB67C00E6F949 /* SavedProducts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */; };
+		95A6BBA02CEBB67C00E6F949 /* SavedProducts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,6 +21,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				95A6BBA02CEBB67C00E6F949 /* SavedProducts.framework in Embed Frameworks */,
 				955C7DF12CEA675D00658A08 /* Coordinator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -35,6 +38,7 @@
 		955C7DEF2CEA675D00658A08 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955C7E382CEA851D00658A08 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		959D29672CE509490039FD68 /* FractalTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavedProducts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B6BB2F2CEA910B0093FDF2 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DE247D2CEABD48009A11FA /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3D25BBE256EAA28B546115 /* Pods-FractalTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalTT.debug.xcconfig"; path = "Target Support Files/Pods-FractalTT/Pods-FractalTT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			files = (
 				1CC34CADAC5DDFA32D23888F /* Pods_FractalTT.framework in Frameworks */,
 				955C7DF02CEA675D00658A08 /* Coordinator.framework in Frameworks */,
+				95A6BB9F2CEBB67C00E6F949 /* SavedProducts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		4BB9FAA94788AA692D27079F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */,
 				95DE247D2CEABD48009A11FA /* FractalData.framework */,
 				95B6BB2F2CEA910B0093FDF2 /* FractalData.framework */,
 				955C7E382CEA851D00658A08 /* FractalData.framework */,

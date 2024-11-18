@@ -58,8 +58,12 @@ final public class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "folder"),
                                                             style: .done,
                                                             target: self,
-                                                            action: nil)
+                                                            action: #selector(pushSavedProducts))
         setupSearchBar()
+    }
+
+    @objc func pushSavedProducts() {
+        flowdelegate?.showGalery()
     }
 
     private func setupApi() {
