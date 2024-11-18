@@ -27,10 +27,17 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        super.viewDidLoad()
         setupNavigation()
         setupBinds()
         setupApi()
         setupCollectionView()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+
     }
 
     private func setupBinds() {

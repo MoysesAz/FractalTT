@@ -28,6 +28,7 @@ final public class ProductDetailsViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        title = viewModel.getProduct().name
         self.contentView.delegate = self.viewModel
         let productModel  = viewModel.getProduct()
         contentView.setupDetails(productModel.name,
@@ -35,4 +36,11 @@ final public class ProductDetailsViewController: UIViewController {
                                  descriptionText: productModel.status,
                                  urlImage: productModel.image)
     }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+
+    }
+
 }
