@@ -1,11 +1,11 @@
 import Foundation
 
 public protocol HomeFlowProtocol {
-    func showDetailsView(_ drink: CharactersModel)
+    func showDetailsView(_ productModel: ProductsModel)
 }
 
 extension HomeViewController: HomeFlowProtocol {
-    public func showDetailsView(_ drink: CharactersModel) {
-        flowdelegate?.showDetailsView(drink)
+    public func showDetailsView(_ productModel: ProductsModel) {
+        flowdelegate?.showDetailsView(productModel)
     }
 }

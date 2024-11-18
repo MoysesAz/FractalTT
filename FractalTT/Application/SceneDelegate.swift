@@ -20,21 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController = UINavigationController()
 
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            let managerData = ManagerData(appDelegate.persistentContainer.viewContext)
-            let coordinator = MainCoordinator(nav: navController, managerData: managerData)
+            let coordinator = MainCoordinator(nav: navController,
+                                              coreDataContext: appDelegate.persistentContainer.viewContext)
             window.rootViewController = navController
             coordinator.start()
             window.makeKeyAndVisible()
             self.window = window
             return
         } else {
-            let managerData = ManagerData(nil)
-            let coordinator = MainCoordinator(nav: navController, managerData: managerData)
-            window.rootViewController = navController
-            coordinator.start()
-            window.makeKeyAndVisible()
-            self.window = window
-            return
+            fatalError()
         }
     }
 }

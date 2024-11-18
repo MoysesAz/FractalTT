@@ -1,27 +1,15 @@
 import CoreData
+import Commons
 import FractalData
 
-public protocol ProductDetailsDataStoreProtocol {
-    func getProduct(byProductName product: String) -> [Products]?
-    func createProduct(product: String, tag: String, productDescription: String, image: Data) -> Bool
-    func deleteProduct(byProductName product: String) -> Bool
-}
-
 public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
-    var viewContext: NSManagedObjectContext?
-    func getProducts(byProductName product: String) -> [Products]?
-    func createProduct(tag: String, productDescription: String, product: String, image: Data) -> Bool
-    func deleteProduct(byProductName product: String) -> Bool
-}
-
-public final class ManagerData: ManagerDataProtocol {
-    public init(_ viewContext: NSManagedObjectContext?) {
+    public init(_ viewContext: NSManagedObjectContext? = nil) {
         self.viewContext = viewContext
     }
 
     public var viewContext: NSManagedObjectContext?
 
-    public func getProducts(byProductName product: String) -> [Products]? {
+    public func getProduct(byProductName product: String) -> [Products]? {
         guard let context = viewContext else {
             Log.message("ManagerData(getProducts) - no viewContext", .warning)
             return nil
@@ -56,7 +44,7 @@ public final class ManagerData: ManagerDataProtocol {
         return nil
     }
 
-    public func createProduct(tag: String, productDescription: String, product: String, image: Data) -> Bool {
+    public func createProduct(product: String, tag: String, productDescription: String, image: Data) -> Bool {
         guard let context = viewContext else {
             Log.message("ManagerData(createProduct) - no viewContext", .warning)
             return false
@@ -99,7 +87,6 @@ public final class ManagerData: ManagerDataProtocol {
             return false
         }
 
-        // Busca os produtos que possuem o mesmo nome no atributo `product`
         let fetchRequest: NSFetchRequest<Products> = Products.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "product == %@", product)
 
@@ -107,12 +94,9 @@ public final class ManagerData: ManagerDataProtocol {
             let products = try context.fetch(fetchRequest)
 
             if !products.isEmpty {
-                // Deleta todos os produtos encontrados com o nome correspondente
                 for productToDelete in products {
                     context.delete(productToDelete)
                 }
-
-                // Salva as alterações no contexto
                 do {
                     try context.save()
                     Log.message("ManagerData(deleteProduct) - Products with name '\(product)' deleted", .success)

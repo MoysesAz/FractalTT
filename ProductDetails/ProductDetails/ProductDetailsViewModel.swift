@@ -1,40 +1,50 @@
-import Foundation
 import Home
 import FractalData
+import CoreData
 
 public protocol ProductDetailsViewModelProtocol {
-    init(managerData: ManagerDataProtocol?)
-    var productModel: CharactersModel? { get set }
-    var productSave: Bool { get set }
+    func isSaved() -> Bool
+    func getProduct() -> ProductsModel
     func saveProduct(tagTitle: String,
                      productName: String,
                      productDescription: String,
                      image: Data) -> Bool
     func delete(productName: String) -> Bool
-    func getProducts(byProductName product: String) -> [Products]?
 }
 
 public class ProductDetailsViewModel {
-    var managerData: ManagerDataProtocol?
-    public var productSave: Bool = false
-    public var productModel: CharactersModel? = nil
+    public var dataStore: ProductDetailsDataStoreProtocol?
+    let productModel: ProductsModel
 
-    public required init(managerData: ManagerDataProtocol? = nil) {
-        self.managerData = managerData
+    public init(dataStore: ProductDetailsDataStoreProtocol? = ProductDetailsDataStore(),
+         productModel: ProductsModel = FactoryMocksProducts.makeProductModel()) {
+        self.dataStore = dataStore
+        self.productModel = productModel
     }
 }
 
 extension ProductDetailsViewModel: ProductDetailsViewModelProtocol {
-    public func getProducts(byProductName product: String) -> [FractalData.Products]? {
-        let products = managerData?.getProducts(byProductName: product)
+    public func getProduct() -> ProductsModel {
+        return productModel
+    }
+    
+    public func isSaved() -> Bool {
+        guard let isSaved =  getProducts(byProductName: productModel.name) else {
+            return false
+        }
+
+        return !isSaved.isEmpty
+    }
+    
+    private func getProducts(byProductName product: String) -> [Products]? {
+        let products =  dataStore?.getProduct(byProductName: product)
         return products
     }
 
     public func saveProduct(tagTitle: String, productName: String, productDescription: String, image: Data) -> Bool {
-        let result = managerData?.createProduct(tag: tagTitle,
-                                   productDescription: productDescription,
-                                   product: productName,
-                                   image: image)
+        let result = dataStore?.createProduct(product: productName, tag: tagTitle,
+                                              productDescription: productDescription,
+                                              image: image)
 
         guard let newResult = result else {
             return false
@@ -44,7 +54,7 @@ extension ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     }
 
     public func delete(productName: String) -> Bool {
-        let result = managerData?.deleteProduct(byProductName: productName)
+        let result = dataStore?.deleteProduct(byProductName: productName)
         guard let newResult = result else {
             return false
         }

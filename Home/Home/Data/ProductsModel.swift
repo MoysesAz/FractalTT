@@ -9,7 +9,14 @@ public struct ProductsModel: Decodable {
     public var gender: String
     public var image: String
 
-    init(id: Int, name: String, status: String, species: String, type: String, gender: String, image: String) {
+    public init(id: Int,
+                name: String,
+                status: String,
+                species: String,
+                type: String,
+                gender: String,
+                image: String) {
+
         self.id = id
         self.name = name
         self.status = status

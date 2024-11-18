@@ -1,8 +1,8 @@
-//
-//  ProductDetailsDataStoreProtocol.swift
-//  ProductDetails
-//
-//  Created by Moyses Miranda do Vale Azevedo on 18/11/24.
-//
-
 import Foundation
+import FractalData
+
+public protocol ProductDetailsDataStoreProtocol {
+    func getProduct(byProductName product: String) -> [Products]?
+    func createProduct(product: String, tag: String, productDescription: String, image: Data) -> Bool
+    func deleteProduct(byProductName product: String) -> Bool
+}

@@ -30,9 +30,9 @@ final public class MainCoordinator: CoordinatorProtocol {
 }
 
 extension MainCoordinator: HomeFlowProtocol {
-    public func showDetailsView(_ drink: Home.CharactersModel) {
-        let viewModel = ProductDetailsViewModel(managerData: managerData)
-        viewModel.productModel = drink
+    public func showDetailsView(_ productModel: ProductsModel) {
+        let dataStore = ProductDetailsDataStore(coreDataContext)
+        let viewModel = ProductDetailsViewModel(dataStore: dataStore, productModel: productModel)
         let viewController = ProductDetailsViewController(viewModel: viewModel)
         nav.pushViewController(viewController, animated: true)
     }

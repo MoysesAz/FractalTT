@@ -12,7 +12,6 @@ final public class ProductDetailsViewController: UIViewController {
 
         self.contentView = contentView
         self.viewModel = viewModel
-        self.viewModel.productSave = false
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -30,10 +29,7 @@ final public class ProductDetailsViewController: UIViewController {
 
     public override func viewDidLoad() {
         self.contentView.delegate = self.viewModel
-
-        guard let productModel = viewModel.productModel else {
-            return
-        }
+        let productModel  = viewModel.getProduct()
         contentView.setupDetails(productModel.name,
                                  nameProduct: productModel.species,
                                  descriptionText: productModel.status,

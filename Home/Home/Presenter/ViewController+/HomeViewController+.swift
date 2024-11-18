@@ -14,7 +14,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
 
         let character = viewModel.filterCollectionView.value[indexPath.row]
-        cell.setupCell(character.name, nameProduct: character.status, urlImage: character.image)
+        cell.setupCell(character.species, nameProduct: character.name, urlImage: character.image)
 
         return cell
 

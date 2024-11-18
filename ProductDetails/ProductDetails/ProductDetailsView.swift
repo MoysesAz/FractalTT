@@ -74,8 +74,7 @@ final public class ProductDetailsView: UIView {
 }
 
 extension ProductDetailsView: ProductDetailsViewProtocol {
-    public func setupDetails(_ tagTitle: String, nameProduct: String, descriptionText: String, urlImage: String) {
-
+    public func setupDetails(_ tagTile: String, nameProduct: String, descriptionText: String, urlImage: String) {
         let loremIpsom = """
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -85,21 +84,26 @@ extension ProductDetailsView: ProductDetailsViewProtocol {
         sheets containing Lorem Ipsum passages,
         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         """
-        checkSave(productName: tagTitle)
+
+        guard let delegate = delegate else {
+            return
+        }
+
+        let product = delegate.getProduct()
 
         DispatchQueue.main.async {
-            self.tagTitle.text = tagTitle
-            self.nameProduct.text = nameProduct
-            self.descriptionLabel.text = descriptionText + loremIpsom
+            self.tagTitle.text = product.species
+            self.nameProduct.text = product.name
+            self.descriptionLabel.text = product.status + loremIpsom
 
         }
-        loadSaveIconColor()
-        imageProduct.networkImage(urlImage)
+        loadSaveIconColor(isSaved: delegate.isSaved())
+        imageProduct.networkImage(product.image)
     }
 
-    private func loadSaveIconColor() {
+    private func loadSaveIconColor(isSaved: Bool) {
         DispatchQueue.main.async {
-            if self.delegate!.productSave {
+            if isSaved {
                 self.saveButton.tintColor = .systemPink
             } else {
                 self.saveButton.tintColor = .gray
@@ -108,51 +112,24 @@ extension ProductDetailsView: ProductDetailsViewProtocol {
     }
 
     @objc func saveButtonTapped() {
-        guard let product = delegate?.productModel else {
+        guard let delegate = delegate, let data = imageProduct.image?.pngData() else {
             return
         }
 
-        guard let data = imageProduct.image?.pngData() else {
-            return
-        }
+        let product = delegate.getProduct()
 
-        guard let delegate = delegate else {
-            return
-        }
+        let isSaved = delegate.isSaved()
 
-        if delegate.productSave {
-            let value = delegate.delete(productName: product.name)
-            if value {
-                self.delegate?.productSave = false
-                loadSaveIconColor()
-            }
+        if isSaved {
+            let result = delegate.delete(productName: product.name)
+            loadSaveIconColor(isSaved: !result)
 
         } else {
-            let value = delegate.saveProduct(tagTitle: product.species,
+            let result = delegate.saveProduct(tagTitle: product.species,
                                              productName: product.name,
                                   productDescription: product.status,
                                   image: data)
-            if value {
-                self.delegate?.productSave = true
-                loadSaveIconColor()
-            }
-        }
-    }
-
-    private func checkSave(productName: String) {
-        guard var delegate = delegate else {
-            return
-        }
-
-        guard let produts = delegate.getProducts(byProductName: productName) else {
-            delegate.productSave = false
-            return
-        }
-
-        if produts.isEmpty {
-            self.delegate?.productSave = false
-        } else {
-            self.delegate?.productSave = true
+            loadSaveIconColor(isSaved: result)
         }
     }
 }
