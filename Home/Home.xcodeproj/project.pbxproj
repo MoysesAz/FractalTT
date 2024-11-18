@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		951E6B432CE58331005EF371 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E6B3A2CE58331005EF371 /* Home.framework */; };
-		9570573D2CE8F44100E8F3E2 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; };
-		9570573E2CE8F44100E8F3E2 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95C6C1512CE964FD00932A03 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1502CE964FD00932A03 /* Commons.framework */; };
-		95C6C1522CE964FD00932A03 /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1502CE964FD00932A03 /* Commons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95EC8C7F2CE8CFB200D93EC6 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; };
-		95EC8C802CE8CFB200D93EC6 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95A6BD002CEBC9B400E6F949 /* Commons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1502CE964FD00932A03 /* Commons.framework */; };
+		95A6BD012CEBC9B400E6F949 /* Commons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1502CE964FD00932A03 /* Commons.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95A6BD032CEBC9B500E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; };
+		95A6BD042CEBC9B500E6F949 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95EC8C7E2CE8CFB200D93EC6 /* DesignSystem.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95A6BD052CEBC9B600E6F949 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; };
+		95A6BD062CEBC9B600E6F949 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9570573C2CE8F44100E8F3E2 /* Networking.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +27,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95EC8C812CE8CFB200D93EC6 /* Embed Frameworks */ = {
+		95A6BD022CEBC9B400E6F949 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9570573E2CE8F44100E8F3E2 /* Networking.framework in Embed Frameworks */,
-				95EC8C802CE8CFB200D93EC6 /* DesignSystem.framework in Embed Frameworks */,
-				95C6C1522CE964FD00932A03 /* Commons.framework in Embed Frameworks */,
+				95A6BD012CEBC9B400E6F949 /* Commons.framework in Embed Frameworks */,
+				95A6BD042CEBC9B500E6F949 /* DesignSystem.framework in Embed Frameworks */,
+				95A6BD062CEBC9B600E6F949 /* Networking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,9 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9570573D2CE8F44100E8F3E2 /* Networking.framework in Frameworks */,
-				95EC8C7F2CE8CFB200D93EC6 /* DesignSystem.framework in Frameworks */,
-				95C6C1512CE964FD00932A03 /* Commons.framework in Frameworks */,
+				95A6BD032CEBC9B500E6F949 /* DesignSystem.framework in Frameworks */,
+				95A6BD002CEBC9B400E6F949 /* Commons.framework in Frameworks */,
+				95A6BD052CEBC9B600E6F949 /* Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 				951E6B362CE58331005EF371 /* Sources */,
 				951E6B372CE58331005EF371 /* Frameworks */,
 				951E6B382CE58331005EF371 /* Resources */,
-				95EC8C812CE8CFB200D93EC6 /* Embed Frameworks */,
+				95A6BD022CEBC9B400E6F949 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,9 +264,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -274,7 +276,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -308,9 +310,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -318,7 +322,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",

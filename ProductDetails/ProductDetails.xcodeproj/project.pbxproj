@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95A6BB2B2CEB741700E6F949 /* FractalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2A2CEB741700E6F949 /* FractalData.framework */; };
-		95A6BB2C2CEB741700E6F949 /* FractalData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2A2CEB741700E6F949 /* FractalData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95A6BB382CEB784500E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB372CEB784500E6F949 /* DesignSystem.framework */; };
-		95A6BB392CEB784500E6F949 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB372CEB784500E6F949 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95A6BCE42CEBC83400E6F949 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C2822CEA514D00932A03 /* Home.framework */; };
+		95A6BCE62CEBC83500E6F949 /* FractalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2A2CEB741700E6F949 /* FractalData.framework */; };
+		95A6BD072CEBC9B900E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB372CEB784500E6F949 /* DesignSystem.framework */; };
+		95A6BD082CEBC9B900E6F949 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB372CEB784500E6F949 /* DesignSystem.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95C6C1F52CEA4EFE00932A03 /* ProductDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C1EC2CEA4EFE00932A03 /* ProductDetails.framework */; };
-		95C6C2832CEA514D00932A03 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C2822CEA514D00932A03 /* Home.framework */; };
-		95C6C2842CEA514D00932A03 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C2822CEA514D00932A03 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +25,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95C6C2852CEA514D00932A03 /* Embed Frameworks */ = {
+		95A6BD092CEBC9B900E6F949 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				95A6BB392CEB784500E6F949 /* DesignSystem.framework in Embed Frameworks */,
-				95C6C2842CEA514D00932A03 /* Home.framework in Embed Frameworks */,
-				95A6BB2C2CEB741700E6F949 /* FractalData.framework in Embed Frameworks */,
+				95A6BD082CEBC9B900E6F949 /* DesignSystem.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A6BB382CEB784500E6F949 /* DesignSystem.framework in Frameworks */,
-				95C6C2832CEA514D00932A03 /* Home.framework in Frameworks */,
-				95A6BB2B2CEB741700E6F949 /* FractalData.framework in Frameworks */,
+				95A6BD072CEBC9B900E6F949 /* DesignSystem.framework in Frameworks */,
+				95A6BCE42CEBC83400E6F949 /* Home.framework in Frameworks */,
+				95A6BCE62CEBC83500E6F949 /* FractalData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +141,7 @@
 				95C6C1E82CEA4EFE00932A03 /* Sources */,
 				95C6C1E92CEA4EFE00932A03 /* Frameworks */,
 				95C6C1EA2CEA4EFE00932A03 /* Resources */,
-				95C6C2852CEA514D00932A03 /* Embed Frameworks */,
+				95A6BD092CEBC9B900E6F949 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,9 +269,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -283,7 +281,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
@@ -317,9 +315,11 @@
 				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -327,7 +327,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",

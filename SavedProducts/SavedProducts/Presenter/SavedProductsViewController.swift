@@ -1,5 +1,4 @@
 import UIKit
-import Networking
 import DesignSystem
 
 final public class SavedProductsViewController: UIViewController {

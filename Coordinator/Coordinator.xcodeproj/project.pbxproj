@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		951E6ABF2CE5736B005EF371 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951E6AB62CE5736B005EF371 /* Coordinator.framework */; };
-		95A6BB2E2CEB74D300E6F949 /* ProductDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */; };
-		95A6BB2F2CEB74D300E6F949 /* ProductDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95A6BB352CEB781000E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB342CEB781000E6F949 /* DesignSystem.framework */; };
-		95A6BB362CEB781000E6F949 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB342CEB781000E6F949 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95E017002CE6075300FB1ACA /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; };
-		95E017012CE6075300FB1ACA /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95A6BCF72CEBC99F00E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB342CEB781000E6F949 /* DesignSystem.framework */; };
+		95A6BCF82CEBC99F00E6F949 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB342CEB781000E6F949 /* DesignSystem.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95A6BCFA2CEBC9A100E6F949 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; };
+		95A6BCFB2CEBC9A100E6F949 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95E016FF2CE6075300FB1ACA /* Home.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95A6BCFC2CEBC9A200E6F949 /* ProductDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */; };
+		95A6BCFD2CEBC9A200E6F949 /* ProductDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95A6BCFE2CEBC9A400E6F949 /* SavedProducts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BC592CEBC03900E6F949 /* SavedProducts.framework */; };
+		95A6BCFF2CEBC9A400E6F949 /* SavedProducts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BC592CEBC03900E6F949 /* SavedProducts.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +29,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		95E017022CE6075300FB1ACA /* Embed Frameworks */ = {
+		95A6BCF92CEBC9A000E6F949 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				95A6BB362CEB781000E6F949 /* DesignSystem.framework in Embed Frameworks */,
-				95A6BB2F2CEB74D300E6F949 /* ProductDetails.framework in Embed Frameworks */,
-				95E017012CE6075300FB1ACA /* Home.framework in Embed Frameworks */,
+				95A6BCFD2CEBC9A200E6F949 /* ProductDetails.framework in Embed Frameworks */,
+				95A6BCF82CEBC99F00E6F949 /* DesignSystem.framework in Embed Frameworks */,
+				95A6BCFF2CEBC9A400E6F949 /* SavedProducts.framework in Embed Frameworks */,
+				95A6BCFB2CEBC9A100E6F949 /* Home.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +51,7 @@
 		95A6BB1F2CEB709100E6F949 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProductDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A6BB342CEB781000E6F949 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC592CEBC03900E6F949 /* SavedProducts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavedProducts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B6BB322CEAA1DE0093FDF2 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6C1702CEA1B9700932A03 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6C3192CEA62E900932A03 /* ProductDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProductDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,9 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A6BB352CEB781000E6F949 /* DesignSystem.framework in Frameworks */,
-				95A6BB2E2CEB74D300E6F949 /* ProductDetails.framework in Frameworks */,
-				95E017002CE6075300FB1ACA /* Home.framework in Frameworks */,
+				95A6BCF72CEBC99F00E6F949 /* DesignSystem.framework in Frameworks */,
+				95A6BCFA2CEBC9A100E6F949 /* Home.framework in Frameworks */,
+				95A6BCFE2CEBC9A400E6F949 /* SavedProducts.framework in Frameworks */,
+				95A6BCFC2CEBC9A200E6F949 /* ProductDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 		95E016FE2CE6075300FB1ACA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95A6BC592CEBC03900E6F949 /* SavedProducts.framework */,
 				95A6BB342CEB781000E6F949 /* DesignSystem.framework */,
 				95A6BB2D2CEB74D300E6F949 /* ProductDetails.framework */,
 				95A6BB1F2CEB709100E6F949 /* FractalData.framework */,
@@ -145,7 +151,7 @@
 				951E6AB22CE5736B005EF371 /* Sources */,
 				951E6AB32CE5736B005EF371 /* Frameworks */,
 				951E6AB42CE5736B005EF371 /* Resources */,
-				95E017022CE6075300FB1ACA /* Embed Frameworks */,
+				95A6BCF92CEBC9A000E6F949 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,9 +277,11 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -281,6 +289,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,9 +318,11 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -319,6 +330,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
