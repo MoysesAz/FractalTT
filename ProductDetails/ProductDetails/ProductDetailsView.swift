@@ -181,7 +181,7 @@ extension ProductDetailsView {
 
     private func nameProductConstraints() {
         NSLayoutConstraint.activate([
-            nameProduct.topAnchor.constraint(equalTo: tagTitle.bottomAnchor, constant: 10),
+            nameProduct.topAnchor.constraint(equalTo: tagTitle.bottomAnchor),
             nameProduct.leadingAnchor.constraint(equalTo: tagTitle.leadingAnchor),
             nameProduct.trailingAnchor.constraint(equalTo: tagTitle.trailingAnchor)
         ])
