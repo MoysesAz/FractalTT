@@ -27,10 +27,9 @@ final public class HomeViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
-        setupItensInNavigation()
+        setupNavigation()
         setupBinds()
         setupApi()
-        setupSearchBar()
         setupCollectionView()
     }
 
@@ -46,12 +45,10 @@ final public class HomeViewController: UIViewController {
         }
     }
 
-    private func setupItensInNavigation() {
-        searchController.searchBar.backgroundColor = .clear
-        searchController.searchBar.searchTextField.backgroundColor = .white
-        searchController.searchBar.searchTextField.placeholder = "Search by name characters"
+    private func setupNavigation() {
         title = "Home"
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupSearchBar()
     }
 
     private func setupApi() {
@@ -64,13 +61,16 @@ final public class HomeViewController: UIViewController {
         }
         homeView.collectionView.dataSource = self
         homeView.collectionView.delegate = self
+        homeView.collectionView.reloadData()
     }
 
     private func setupSearchBar() {
         searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.searchTextField.placeholder = "Pesquise aqui"
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.backgroundColor = .clear
+        searchController.searchBar.searchTextField.placeholder = "Search for a product"
+        navigationItem.searchController = searchController
     }
 
 }
