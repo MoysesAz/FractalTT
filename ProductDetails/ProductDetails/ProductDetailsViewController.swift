@@ -3,20 +3,16 @@ import Home
 import FractalData
 
 final public class ProductDetailsViewController: UIViewController {
-    let viewModel: ProductDetailsModelProtocol
+    var viewModel: ProductDetailsViewModelProtocol
     var contentView: ProductDetailsViewProtocol
     var flowdelegate: ProductDetailsFlowProtocol?
 
-    public init(_ characters: CharactersModel,
-                contentView: some ProductDetailsViewProtocol = ProductDetailsView(),
-                viewModel: some ProductDetailsModelProtocol = ProductDetailsModel()) {
+    public init(contentView: some ProductDetailsViewProtocol = ProductDetailsView(),
+                viewModel: some ProductDetailsViewModelProtocol = ProductDetailsViewModel()) {
 
         self.contentView = contentView
         self.viewModel = viewModel
-        contentView.setupDetails(characters.name,
-                                 nameProduct: characters.species,
-                                 descriptionText: characters.status,
-                                 urlImage: characters.image)
+        self.viewModel.productSave = false
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,13 +29,14 @@ final public class ProductDetailsViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
-    }
+        self.contentView.delegate = self.viewModel
 
-    private func setupBinds() {
-
-    }
-
-    private func setupItensInNavigation() {
-
+        guard let productModel = viewModel.productModel else {
+            return
+        }
+        contentView.setupDetails(productModel.name,
+                                 nameProduct: productModel.species,
+                                 descriptionText: productModel.status,
+                                 urlImage: productModel.image)
     }
 }

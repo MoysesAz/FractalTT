@@ -6,7 +6,6 @@ import FractalData
 
 final public class MainCoordinator: CoordinatorProtocol {
     var managerData: ManagerDataProtocol
-    
     var nav: UINavigationController
 
     public init(nav: UINavigationController, managerData: ManagerDataProtocol) {
@@ -32,7 +31,9 @@ final public class MainCoordinator: CoordinatorProtocol {
 
 extension MainCoordinator: HomeFlowProtocol {
     public func showDetailsView(_ drink: Home.CharactersModel) {
-        let viewController = ProductDetailsViewController(drink)
+        let viewModel = ProductDetailsViewModel(managerData: managerData)
+        viewModel.productModel = drink
+        let viewController = ProductDetailsViewController(viewModel: viewModel)
         nav.pushViewController(viewController, animated: true)
     }
 }

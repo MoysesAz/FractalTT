@@ -3,10 +3,13 @@ import DesignSystem
 import Commons
 
 public protocol ProductDetailsViewProtocol {
+    var delegate: ProductDetailsViewModelProtocol? { get set }
     func setupDetails(_ tagTile: String, nameProduct: String, descriptionText: String, urlImage: String)
 }
 
 final public class ProductDetailsView: UIView {
+    public var delegate: ProductDetailsViewModelProtocol?
+
     lazy var imageProduct: UIImageView = {
         let searchIcon = UIImageView(frame: .zero)
         var image = UIImage(named: "DefaultImage")
@@ -47,11 +50,12 @@ final public class ProductDetailsView: UIView {
     }()
 
     lazy var saveButton: UIButton = {
-        let heartButton = UIButton(frame: .zero)
-        heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        heartButton.tintColor = .gray
-        heartButton.translatesAutoresizingMaskIntoConstraints = false
-        return heartButton
+        let saveButton = UIButton(frame: .zero)
+        saveButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        saveButton.tintColor = .gray
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        return saveButton
     }()
 
     public override init(frame: CGRect) {
@@ -70,7 +74,7 @@ final public class ProductDetailsView: UIView {
 }
 
 extension ProductDetailsView: ProductDetailsViewProtocol {
-    public func setupDetails(_ tagTile: String, nameProduct: String, descriptionText: String, urlImage: String) {
+    public func setupDetails(_ tagTitle: String, nameProduct: String, descriptionText: String, urlImage: String) {
 
         let loremIpsom = """
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -81,13 +85,75 @@ extension ProductDetailsView: ProductDetailsViewProtocol {
         sheets containing Lorem Ipsum passages,
         and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         """
+        checkSave(productName: tagTitle)
 
         DispatchQueue.main.async {
-            self.tagTitle.text = tagTile
+            self.tagTitle.text = tagTitle
             self.nameProduct.text = nameProduct
             self.descriptionLabel.text = descriptionText + loremIpsom
+
         }
+        loadSaveIconColor()
         imageProduct.networkImage(urlImage)
+    }
+
+    private func loadSaveIconColor() {
+        DispatchQueue.main.async {
+            if self.delegate!.productSave {
+                self.saveButton.tintColor = .systemPink
+            } else {
+                self.saveButton.tintColor = .gray
+            }
+        }
+    }
+
+    @objc func saveButtonTapped() {
+        guard let product = delegate?.productModel else {
+            return
+        }
+
+        guard let data = imageProduct.image?.pngData() else {
+            return
+        }
+
+        guard let delegate = delegate else {
+            return
+        }
+
+        if delegate.productSave {
+            let value = delegate.delete(productName: product.name)
+            if value {
+                self.delegate?.productSave = false
+                loadSaveIconColor()
+            }
+
+        } else {
+            let value = delegate.saveProduct(tagTitle: product.species,
+                                             productName: product.name,
+                                  productDescription: product.status,
+                                  image: data)
+            if value {
+                self.delegate?.productSave = true
+                loadSaveIconColor()
+            }
+        }
+    }
+
+    private func checkSave(productName: String) {
+        guard var delegate = delegate else {
+            return
+        }
+
+        guard let produts = delegate.getProducts(byProductName: productName) else {
+            delegate.productSave = false
+            return
+        }
+
+        if produts.isEmpty {
+            self.delegate?.productSave = false
+        } else {
+            self.delegate?.productSave = true
+        }
     }
 }
 
