@@ -23,6 +23,7 @@ final public class MainCoordinator: CoordinatorProtocol {
         nav.navigationBar.standardAppearance = appearance
         nav.navigationBar.scrollEdgeAppearance = appearance
         nav.navigationBar.compactAppearance = appearance
+        nav.navigationBar.tintColor = .white
 
         let viewController = HomeFactory.make(self)
         nav.pushViewController(viewController, animated: false)
