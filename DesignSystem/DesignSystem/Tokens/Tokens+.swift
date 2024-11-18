@@ -33,7 +33,7 @@ extension Luxus.Tokens.Colors {
 }
 
 extension Luxus.Tokens.Font {
-        static func montserratMedium(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
+        public static func montserratMedium(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
             let font = "Montserrat-Medium"
             guard let customFont = UIFont(name: font, size: size) else {
                 print("\(font) couldn't be found")
@@ -43,7 +43,7 @@ extension Luxus.Tokens.Font {
             return customFont
         }
 
-        static func montserratSemiBold(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
+        public static func montserratSemiBold(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
             let font = "Montserrat-SemiBold"
             guard let customFont = UIFont(name: font, size: size) else {
                 print("\(font) couldn't be found")
@@ -53,7 +53,7 @@ extension Luxus.Tokens.Font {
             return customFont
         }
 
-        static func montserratBold(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
+        public static func montserratBold(_ size: CGFloat = UIFont.labelFontSize) -> UIFont {
             let font = "Montserrat-Bold"
             guard let customFont = UIFont(name: "Montserrat-Bold", size: size) else {
                 print("\(font) couldn't be found")

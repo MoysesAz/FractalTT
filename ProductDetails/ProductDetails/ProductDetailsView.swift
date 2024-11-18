@@ -23,7 +23,7 @@ final public class ProductDetailsView: UIView {
         let tagTitle = UILabel(frame: .zero)
         tagTitle.textAlignment = .left
         tagTitle.text = "No result were found"
-        tagTitle.font = UIFont.systemFont(ofSize: 18)
+        tagTitle.font = Luxus.Tokens.Font.montserratBold(25)
         tagTitle.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         tagTitle.translatesAutoresizingMaskIntoConstraints = false
         return tagTitle
@@ -33,7 +33,7 @@ final public class ProductDetailsView: UIView {
         let nameProduct = UILabel(frame: .zero)
         nameProduct.textAlignment = .left
         nameProduct.text = "No result were found"
-        nameProduct.font = UIFont.systemFont(ofSize: 18)
+        nameProduct.font = Luxus.Tokens.Font.montserratSemiBold(18)
         nameProduct.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         nameProduct.translatesAutoresizingMaskIntoConstraints = false
         return nameProduct
@@ -43,7 +43,7 @@ final public class ProductDetailsView: UIView {
         let descriptionLabel = UITextView(frame: .zero)
         descriptionLabel.textAlignment = .left
         descriptionLabel.text = "No result were found"
-        descriptionLabel.font = UIFont.systemFont(ofSize: 18)
+        descriptionLabel.font = Luxus.Tokens.Font.montserratMedium(18)
         descriptionLabel.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         return descriptionLabel

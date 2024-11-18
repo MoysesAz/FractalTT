@@ -16,7 +16,7 @@ class HomeProductCell: UICollectionViewCell {
         let tagTitle = UILabel(frame: .zero)
         tagTitle.textAlignment = .left
         tagTitle.text = "Default Text"
-        tagTitle.font = UIFont.systemFont(ofSize: 18)
+        tagTitle.font = Luxus.Tokens.Font.montserratBold(18)
         tagTitle.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         tagTitle.translatesAutoresizingMaskIntoConstraints = false
         return tagTitle
@@ -26,7 +26,7 @@ class HomeProductCell: UICollectionViewCell {
         let nameProductLabel = UILabel(frame: .zero)
         nameProductLabel.textAlignment = .left
         nameProductLabel.text = "Default Text"
-        nameProductLabel.font = UIFont.systemFont(ofSize: 18)
+        nameProductLabel.font = Luxus.Tokens.Font.montserratMedium(18)
         nameProductLabel.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         nameProductLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameProductLabel

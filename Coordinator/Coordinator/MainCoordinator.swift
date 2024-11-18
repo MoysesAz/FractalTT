@@ -18,8 +18,9 @@ final public class MainCoordinator: CoordinatorProtocol {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = Luxus.Tokens.Colors.Primary.lxPrimary
-        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white,
+                                               .font: Luxus.Tokens.Font.montserratBold(40)]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
 
         nav.navigationBar.standardAppearance = appearance
         nav.navigationBar.scrollEdgeAppearance = appearance
