@@ -2,7 +2,7 @@ import Foundation
 import Networking
 
 final class RickaAdMortyApiEndPoint: Endpoint {
-    var baseUrl: String = "https://rickandmortyapi.com/api"
+    var baseUrl: String = "https://www.rickandmortyapi.com/api"
 
     var path: String = "/character"
 
