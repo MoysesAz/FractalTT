@@ -13,10 +13,13 @@ final public class RequestValidator: RequestValidatorProtocol {
             Log.message("Url is Null", .failure)
             throw NetworkErrors.nullURL
         }
-        guard let newURL = URL(string: urlString) else {
+        guard let newURL = URL(string: urlString),
+              let host = newURL.host,
+              host.contains(".") else {
             Log.message("INVALID URL: \(urlString)", .failure)
             throw NetworkErrors.invalidURL
         }
+
         Log.message("VALID URL: \(urlString)", .success)
         return newURL
     }
