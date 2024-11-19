@@ -11,7 +11,8 @@ import CoreData
 @main
 public class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(_ application: UIApplication,
-                            didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+                            didFinishLaunchingWithOptions launchOptions:
+                            [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
     }
 
@@ -27,7 +28,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataF" )
-        container.loadPersistentStores(completionHandler: { ( storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { ( _, error) in
             if let error = error as NSError? {
                 fatalError("\(error)")
             }

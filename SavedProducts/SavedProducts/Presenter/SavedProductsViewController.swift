@@ -7,7 +7,7 @@ final public class SavedProductsViewController: UIViewController {
     var flowdelegate: SavedProductsFlowProtocol?
 
     public init(contentView: some SavedProductsViewProtocol = SavedProductsView(),
-         viewModel: some SavedProductsViewModelProtocol = SavedProductsViewModel()) {
+                viewModel: some SavedProductsViewModelProtocol = SavedProductsViewModel()) {
         self.contentView = contentView
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

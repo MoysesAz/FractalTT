@@ -18,6 +18,4 @@ final public class FactoryMocksProducts {
     public static func makePaginationAllProductsModel() -> PaginationAllProductsModel {
         return .init(prev: "", next: "")
     }
-
-
 }

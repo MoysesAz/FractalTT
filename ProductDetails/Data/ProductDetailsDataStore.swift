@@ -25,7 +25,8 @@ public final class ProductDetailsDataStore: ProductDetailsDataStoreProtocol {
                 Log.message("ProductDetailsDataStore(getProducts) - No products found with name '\(product)'", .warning)
                 return nil
             } else {
-                Log.message("ProductDetailsDataStore(getProducts) - Products with name '\(product)' fetched successfully", .success)
+                let msg = "ProductDetailsDataStore(getProducts) - Products with name '\(product)' fetched successfully"
+                Log.message(msg, .success)
                 return products
             }
         } catch {

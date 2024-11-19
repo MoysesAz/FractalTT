@@ -12,7 +12,8 @@ final public class SavedProductsView: UIView {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(SavedProductsGalleryCell.self, forCellWithReuseIdentifier: SavedProductsGalleryCell.identifier)
+        collectionView.register(SavedProductsGalleryCell.self,
+                                forCellWithReuseIdentifier: SavedProductsGalleryCell.identifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
         return collectionView

@@ -17,7 +17,7 @@ public class ProductDetailsViewModel {
     let productModel: ProductsModel
 
     public init(dataStore: ProductDetailsDataStoreProtocol? = ProductDetailsDataStore(),
-         productModel: ProductsModel = FactoryMocksProducts.makeProductModel()) {
+                productModel: ProductsModel = FactoryMocksProducts.makeProductModel()) {
         self.dataStore = dataStore
         self.productModel = productModel
     }
@@ -27,7 +27,7 @@ extension ProductDetailsViewModel: ProductDetailsViewModelProtocol {
     public func getProduct() -> ProductsModel {
         return productModel
     }
-    
+
     public func isSaved() -> Bool {
         guard let isSaved =  getProducts(byProductName: productModel.name) else {
             return false
@@ -35,7 +35,7 @@ extension ProductDetailsViewModel: ProductDetailsViewModelProtocol {
 
         return !isSaved.isEmpty
     }
-    
+
     private func getProducts(byProductName product: String) -> [Products]? {
         let products =  dataStore?.getProduct(byProductName: product)
         return products
