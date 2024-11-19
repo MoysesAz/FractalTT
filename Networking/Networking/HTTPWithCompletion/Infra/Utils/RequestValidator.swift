@@ -13,9 +13,13 @@ final public class RequestValidator: RequestValidatorProtocol {
             Log.message("Url is Null", .failure)
             throw NetworkErrors.nullURL
         }
-        guard let newURL = URL(string: urlString),
+
+        let normalizedURL = urlString.starts(with: "http") ? urlString : "https://\(urlString)"
+        guard let newURL = URL(string: normalizedURL),
               let host = newURL.host,
-              host.contains(".") else {
+              host.contains("."),
+              host.contains("www"),
+              ["http", "https"].contains(newURL.scheme?.lowercased()) else {
             Log.message("INVALID URL: \(urlString)", .failure)
             throw NetworkErrors.invalidURL
         }
