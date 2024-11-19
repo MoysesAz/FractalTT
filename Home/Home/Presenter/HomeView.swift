@@ -37,7 +37,7 @@ final public class HomeView: UIView {
         let warningLabel = UILabel(frame: .zero)
         warningLabel.textAlignment = .center
         warningLabel.text = "No result were found"
-        warningLabel.font = UIFont.systemFont(ofSize: 18)
+        warningLabel.font = Luxus.Tokens.Font.montserratBold(20)
         warningLabel.textColor = Luxus.Tokens.Colors.Font.lxPrimary
         warningLabel.translatesAutoresizingMaskIntoConstraints = false
         return warningLabel
