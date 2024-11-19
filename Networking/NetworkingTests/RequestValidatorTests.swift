@@ -23,7 +23,7 @@ final class RequestValidatorTests: XCTestCase {
 
     func test_validateURLString_should_ThrowNullURL_forNilURL() {
         XCTAssertThrowsError(try sut.validateURLString(nil)) { error in
-            XCTAssertEqual(error as! NetworkErrors, .nullURL)
+            XCTAssertEqual(error as? NetworkErrors, .nullURL)
         }
     }
 
@@ -31,7 +31,7 @@ final class RequestValidatorTests: XCTestCase {
         let invalidURL = "invalid_url"
 
         XCTAssertThrowsError(try sut.validateURLString(invalidURL)) { error in
-            XCTAssertEqual((error as! NetworkErrors), .invalidURL)
+            XCTAssertEqual((error as? NetworkErrors), .invalidURL)
         }
     }
 
