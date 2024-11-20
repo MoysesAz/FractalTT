@@ -2,8 +2,6 @@ import Foundation
 import ProductDetails
 import FractalData
 
-
-
 public final class ProductDetailsDataStoreMock: ProductDetailsDataStoreProtocol {
 
     public init() {}
