@@ -83,7 +83,7 @@ final class NetworkingServiceTests: XCTestCase {
     func test_executeRequest_shouldReturnDecodingError_forMalformedJSON() {
         let mockData = Data("""
         {
-            "key": "value"
+            "key: "value"
         }
         """.utf8)
         let mockSession = createMockResponse(data: mockData)
