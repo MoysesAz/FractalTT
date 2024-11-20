@@ -33,6 +33,46 @@ Vamos começar? 🚀
     ✅ Observableobject
     ✅ Teste Unitários
 
+## Índice
+- [Pré-requisitos](#Pré-requisitos)
+- [iOS Light](#iOS-Light)
+- [iOS Dark](#iOS-Dark)
+- [iPad Light](#iPad-Light)
+- [iPad Dark](#iPad-Dark)
+
+## Pré-requisitos
+
+Antes de rodar o projeto, certifique-se de ter os seguintes itens instalados:
+
+
+- CocoaPods para gerenciar as dependências
+- Xcode para compilar e rodar o projeto
+
+### Via Homebrew
+```bash
+  brew install cocoapods
+```
+
+### Via Curl
+```bash
+  curl -sL https://get.cocoapods.org | bash
+```
+
+### Via Mint
+```bash
+  mint install cocoapods
+```
+
+### Após a atualização, instale as dependências do projeto:
+```bash
+  pod install
+```
+
+Abra o workspace do Xcode:
+```bash
+  open FractalTT.xcworkspace
+```
+
 ## iOS Light
 <img width="486" alt="Screenshot 2024-11-19 at 18 12 01" src="https://github.com/user-attachments/assets/fb81c6a9-254b-459a-a7e2-ac2273a45c46">
 <img width="486" alt="Screenshot 2024-11-19 at 18 14 30" src="https://github.com/user-attachments/assets/d2a1aaeb-5629-476d-b7e9-3dbc01d2abd9">
