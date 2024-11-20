@@ -18,6 +18,7 @@ Vamos começar? 🚀
     ✅ URLSession
     ✅ CoreData
     ✅ iOS e iPad
+    ✅ XCTest
 
 
 ## Práticas e Abordagens
@@ -30,6 +31,7 @@ Vamos começar? 🚀
     ✅ Workspace Architecture
     ✅ MVVM - C
     ✅ Observableobject
+    ✅ Teste Unitários
 
 ## iOS Light
 <img width="486" alt="Screenshot 2024-11-19 at 18 12 01" src="https://github.com/user-attachments/assets/fb81c6a9-254b-459a-a7e2-ac2273a45c46">
