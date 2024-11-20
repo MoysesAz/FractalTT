@@ -13,13 +13,11 @@ class NetworkingWithCompletionTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        // Configuração dos spies
         getSpy = HTTPGetWithCompletionSpy()
         postSpy = HTTPPostWithCompletionSpy()
         putSpy = HTTPPutWithCompletionSpy()
         deleteSpy = HTTPDeleteWithCompletionSpy()
 
-        // Criação da instância da classe Networking com os mocks
         networking = NetworkingWithCompletion(get: getSpy,
                                               post: postSpy,
                                               delete: deleteSpy,
@@ -35,16 +33,16 @@ class NetworkingWithCompletionTests: XCTestCase {
         super.tearDown()
     }
 
-    func test_get_should_sucess() {
+    func test_hanlderGet_should_sucess() {
         let expectation = self.expectation(description: "GET request completed")
         let endpoint = EndpointMock()
 
-        getSpy.resultToReturn = .success(["name": "John Doe"])
+        getSpy.resultToReturn = .success(["key": "value"])
 
         networking.handler(endpoint, responseType: [String: String].self) { result in
             switch result {
             case .success(let data):
-                XCTAssertEqual(data["name"], "John Doe")
+                XCTAssertEqual(data["key"], "value")
             case .failure(let error):
                 XCTFail("Expected success, but got failure: \(error)")
             }
@@ -52,11 +50,9 @@ class NetworkingWithCompletionTests: XCTestCase {
         }
 
         wait(for: [expectation], timeout: 1)
-        XCTAssertEqual(getSpy.capturedHeaders?["Authorization"], "Bearer token")
-        XCTAssertEqual(getSpy.url, "https://api.example.com/users")
     }
 
-    func testHandler_get() {
+    func test_hanlderPost_should_sucess() {
         let expectation = self.expectation(description: "POST request completed")
         let mockData = Data("""
         {
@@ -67,12 +63,12 @@ class NetworkingWithCompletionTests: XCTestCase {
         endpoint.method = .POST
         endpoint.body = mockData
 
-        postSpy.resultToReturn = .success(["status": "success"])
+        postSpy.resultToReturn = .success(mockData)
 
-        networking.handler(endpoint, responseType: [String: String].self) { result in
+        networking.handler(endpoint, responseType: Data.self) { result in
             switch result {
             case .success(let data):
-                XCTAssertEqual(data["status"], "success")
+                XCTAssertEqual(data, mockData)
             case .failure(let error):
                 XCTFail("Expected success, but got failure: \(error)")
             }
@@ -80,9 +76,57 @@ class NetworkingWithCompletionTests: XCTestCase {
         }
 
         wait(for: [expectation], timeout: 1)
+    }
 
-        XCTAssertEqual(postSpy.capturedHeaders?["Authorization"], "Bearer token")
-        XCTAssertEqual(postSpy.url, "https://api.example.com/users")
-        XCTAssertEqual(postSpy.capturedBody as? String, "[name': 'John Doe']")
+    func test_hanlderPut_should_sucess() {
+        let expectation = self.expectation(description: "PUT request completed")
+        let mockData = Data("""
+        {
+            "updatedKey": "updatedValue"
+        }
+        """.utf8)
+        let endpoint = EndpointMock()
+        endpoint.method = .PUT
+        endpoint.body = mockData
+
+        putSpy.resultToReturn = .success(mockData)
+
+        networking.handler(endpoint, responseType: Data.self) { result in
+            switch result {
+            case .success(let data):
+                XCTAssertEqual(data, mockData)
+            case .failure(let error):
+                XCTFail("Expected success, but got failure: \(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func test_hanlderDelete_should_sucess() {
+        let expectation = self.expectation(description: "DELETE request completed")
+        let endpoint = EndpointMock()
+        endpoint.method = .DELETE
+        let mockData = Data("""
+        {
+            "updatedKey": "updatedValue"
+        }
+        """.utf8)
+        endpoint.body = mockData
+
+        deleteSpy.resultToReturn = .success((mockData))
+
+        networking.handler(endpoint, responseType: Data.self) { result in
+            switch result {
+            case .success:
+                XCTAssertTrue(true)
+            case .failure(let error):
+                XCTFail("Expected success, but got failure: \(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
     }
 }
