@@ -24,14 +24,17 @@ class HTTPDeleteWithCompletionSpy: HTTPDeleteWithCompletionProtocol {
                 if let data = mockData as? T {
                     completion(.success(data))
                 } else {
-                    let decodingError = NSError(domain: "DecodingError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Mock data type mismatch."])
+                    let decodingError = NSError(domain: "DecodingError",
+                                                code: -1,
+                                                userInfo: [NSLocalizedDescriptionKey: "Mock data type mismatch."])
                     completion(.failure(decodingError))
                 }
             case .failure(let error):
                 completion(.failure(error))
             }
         } else {
-            let defaultError = NSError(domain: "MockError", code: -1, userInfo: [NSLocalizedDescriptionKey: "No result provided in mock."])
+            let defaultError = NSError(domain: "MockError", code: -1,
+                                       userInfo: [NSLocalizedDescriptionKey: "No result provided in mock."])
             completion(.failure(defaultError))
         }
     }

@@ -8,10 +8,10 @@ final class EndpointMock: Endpoint {
 
     var method: Networking.HTTPMethod = .GET
 
-    var queries: [String : String] = [:]
+    var queries: [String: String] = [:]
 
-    var headers: [String : String] = ["Authorization": "Bearer token"]
+    var headers: [String: String] = ["Authorization": "Bearer token"]
 
-    var body: Data? = nil
+    var body: Data?
 
 }

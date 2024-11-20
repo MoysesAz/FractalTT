@@ -24,11 +24,11 @@ final class NetworkingServiceTests: XCTestCase {
     }
 
     func test_executeRequest_successfulResponse() {
-        let mockData = """
+        let mockData = Data("""
         {
             "key": "value"
         }
-        """.data(using: .utf8)
+        """.utf8)
         let mockSession = createMockResponse(data: mockData)
         let service = makeService(with: mockSession)
         let expectation = XCTestExpectation(description: "Completion handler called")
@@ -49,7 +49,8 @@ final class NetworkingServiceTests: XCTestCase {
         let mockSession = createMockResponse(data: nil, error: NetworkErrors.invalidURL)
         let service = makeService(with: mockSession)
         let expectation = XCTestExpectation(description: "Completion handler called")
-        let expectetError = NetworkErrors.networkFailure(message:"The operation couldn’t be completed. (Networking.NetworkErrors error 2.)")
+        let msg = "The operation couldn’t be completed. (Networking.NetworkErrors error 2.)"
+        let expectetError = NetworkErrors.networkFailure(message: msg)
         service.executeRequest(URLRequest(url: URL(string: "mock.com")!)) { (result: Result<[String: String], Error>) in
             if case .failure(let error) = result {
                 XCTAssertEqual(error as? NetworkErrors, expectetError)
@@ -80,11 +81,11 @@ final class NetworkingServiceTests: XCTestCase {
     }
 
     func test_executeRequest_shouldReturnDecodingError_forMalformedJSON() {
-        let mockData = """
+        let mockData = Data("""
         {
-            "key: "value"
+            "key": "value"
         }
-        """.data(using: .utf8)
+        """.utf8)
         let mockSession = createMockResponse(data: mockData)
         let service = makeService(with: mockSession)
         let expectation = XCTestExpectation(description: "Completion handler called")

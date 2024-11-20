@@ -10,7 +10,6 @@ class NetworkingWithCompletionTests: XCTestCase {
     var deleteSpy: HTTPDeleteWithCompletionSpy!
     var endPoint: Endpoint!
 
-
     override func setUp() {
         super.setUp()
 
@@ -59,10 +58,14 @@ class NetworkingWithCompletionTests: XCTestCase {
 
     func testHandler_get() {
         let expectation = self.expectation(description: "POST request completed")
-
+        let mockData = Data("""
+        {
+            "key": "value"
+        }
+        """.utf8)
         let endpoint = EndpointMock()
         endpoint.method = .POST
-        endpoint.body = "[name': 'John Doe']".data(using: .utf8)
+        endpoint.body = mockData
 
         postSpy.resultToReturn = .success(["status": "success"])
 
@@ -83,4 +86,3 @@ class NetworkingWithCompletionTests: XCTestCase {
         XCTAssertEqual(postSpy.capturedBody as? String, "[name': 'John Doe']")
     }
 }
-
