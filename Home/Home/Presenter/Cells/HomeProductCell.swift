@@ -52,10 +52,8 @@ class HomeProductCell: UICollectionViewCell {
 
 extension HomeProductCell {
     public func setupCell(_ tag: String, nameProduct: String, urlImage: String) {
-        DispatchQueue.main.async {
-            self.tagTitle.text = tag
-            self.nameProductLabel.text = nameProduct
-        }
+        self.tagTitle.text = tag
+        self.nameProductLabel.text = nameProduct
         productImage.networkImage(urlImage)
     }
 }

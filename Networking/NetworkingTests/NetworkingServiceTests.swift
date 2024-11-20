@@ -2,7 +2,7 @@ import XCTest
 @testable import Networking
 
 final class NetworkingServiceTests: XCTestCase {
-    private func makeService(with mockSession: MockURLSession) -> NetworkingService {
+    private func makeService(with mockSession: MockURLSessionSpy) -> NetworkingService {
         return NetworkingService(session: mockSession)
     }
 
@@ -10,8 +10,8 @@ final class NetworkingServiceTests: XCTestCase {
         data: Data?,
         statusCode: Int = 200,
         error: Error? = nil
-    ) -> MockURLSession {
-        let mockSession = MockURLSession()
+    ) -> MockURLSessionSpy {
+        let mockSession = MockURLSessionSpy()
         mockSession.data = data
         mockSession.error = error
         mockSession.response = HTTPURLResponse(

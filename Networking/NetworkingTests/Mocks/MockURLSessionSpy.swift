@@ -1,7 +1,7 @@
 import Foundation
 import Networking
 
-class MockURLSession: URLSessionProtocol {
+class MockURLSessionSpy: URLSessionProtocol {
     var data: Data?
     var response: URLResponse?
     var error: Error?

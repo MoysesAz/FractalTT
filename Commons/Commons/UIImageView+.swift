@@ -4,6 +4,7 @@ extension UIImageView {
 
     public func networkImage(_ urlImage: String) {
         let cacheKey = NSString(string: urlImage)
+        self.image = UIImage(named: "DefaultImage")
 
         if let cachedImage = UIImageView.imageCache.object(forKey: cacheKey) {
             Log.message("Image already exists in cache with key: \(urlImage)", .success)
@@ -24,15 +25,9 @@ extension UIImageView {
                         }
                     } else {
                         Log.message("Data is not an image", .failure)
-                        DispatchQueue.main.async {
-                            self.image = UIImage(named: "DefaultImage")
-                        }
                     }
                 } catch {
                     Log.message(error.localizedDescription, .failure)
-                    DispatchQueue.main.async {
-                        self.image = UIImage(named: "DefaultImage")
-                    }
                 }
             }
         }
