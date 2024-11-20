@@ -1,10 +1,3 @@
-//
-//  HomeTests.swift
-//  HomeTests
-//
-//  Created by Moyses Miranda do Vale Azevedo on 13/11/24.
-//\
-
 import XCTest
 @testable import Home
 
@@ -29,8 +22,19 @@ class HomeViewModelTests: XCTestCase {
     }
 
     func test_getAllCharacters_firstCall_shouldPopulateCacheAndFilter_with_cacheIsEmpty_and_next() {
-        let product1 = ProductsModel(id: 4, name: "Product1", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
-        let product2 = ProductsModel(id: 6, name: "Product2", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
+        let product1 = ProductsModel(id: 4,
+                                     name: "Product1",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
+        let product2 = ProductsModel(id: 6, name: "Product2",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
         let infoModel = PaginationAllProductsModel(next: "https://nextpage.com")
         let mockData = AllProductsModel(
             info: infoModel,
@@ -49,8 +53,19 @@ class HomeViewModelTests: XCTestCase {
     }
 
     func test_getAllCharacters_firstCall_should_ReturnNil_with_cacheIsEmpty_and_nextIsNull() {
-        let product1 = ProductsModel(id: 4, name: "Product1", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
-        let product2 = ProductsModel(id: 6, name: "Product2", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
+        let product1 = ProductsModel(id: 4,
+                                     name: "Product1",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
+        let product2 = ProductsModel(id: 6, name: "Product2",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
         let infoModel = PaginationAllProductsModel(next: nil)
         let mockData = AllProductsModel(
             info: infoModel,
@@ -69,14 +84,24 @@ class HomeViewModelTests: XCTestCase {
     }
 
     func test_getAllCharacters_firstCall_shouldPopulateCacheAndFilter_with_cacheIsNotEmpty() {
-        let product1 = ProductsModel(id: 4, name: "Product1", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
-        let product2 = ProductsModel(id: 6, name: "Product2", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
+        let product1 = ProductsModel(id: 4,
+                                     name: "Product1",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
+        let product2 = ProductsModel(id: 6, name: "Product2",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
         let infoModel = PaginationAllProductsModel(next: "https://nextpage.com")
         let mockData = AllProductsModel(
             info: infoModel,
             results: [product2]
         )
-
         let sucess: Result<AllProductsModel, any Error> = .success(mockData)
         networkSpy.resultToReturn = sucess
         viewModel.cacheCollectionView.value = [product1]
@@ -89,8 +114,20 @@ class HomeViewModelTests: XCTestCase {
     }
 
     func test_getAllCharacters_firstCall_should_ReturnNil_with_cacheIsNotEmpty_and_nextIsNull() {
-        let product1 = ProductsModel(id: 4, name: "Product1", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
-        let product2 = ProductsModel(id: 6, name: "Product2", status: "ok", species: "human", type: "type", gender: "ok", image: "www.image.com")
+        let product1 = ProductsModel(id: 4,
+                                     name: "Product1",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
+        let product2 = ProductsModel(id: 6,
+                                     name: "Product2",
+                                     status: "ok",
+                                     species: "human",
+                                     type: "type",
+                                     gender: "ok",
+                                     image: "www.image.com")
         let infoModel = PaginationAllProductsModel(next: nil)
         let mockData = AllProductsModel(
             info: infoModel,
