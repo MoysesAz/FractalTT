@@ -6,11 +6,15 @@ public protocol NetworkingServiceProtocol {
 }
 
 final public class NetworkingService: NetworkingServiceProtocol {
-    public init() {}
+    private let session: URLSessionProtocol
+
+    public init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
+
     public func executeRequest<T: Decodable>(_ urlRequest: URLRequest,
                                              completion: @escaping (Result<T, Error>) -> Void) {
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
                 Log.message(error.localizedDescription, .failure)
                 completion(.failure(NetworkErrors.networkFailure(message: error.localizedDescription)))
@@ -21,19 +25,21 @@ final public class NetworkingService: NetworkingServiceProtocol {
                 Log.response(response)
             }
 
-            if let data = data {
-                do {
-                    let decodedResponse = try JSONDecoder().decode(T.self, from: data)
-                    completion(.success(decodedResponse))
-                } catch {
-                    Log.message("Decoding error: " + error.localizedDescription, .failure)
-                    completion(.failure(NetworkErrors.decodingError))
-                }
-            } else {
+            guard let data = data else {
                 Log.message("No data received", .failure)
                 completion(.failure(NetworkErrors.noData))
+                return
+            }
+
+            do {
+                let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(decodedResponse))
+            } catch {
+                Log.message("Decoding error: " + error.localizedDescription, .failure)
+                completion(.failure(NetworkErrors.decodingError))
             }
         }
         task.resume()
     }
 }
+

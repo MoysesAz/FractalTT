@@ -28,8 +28,7 @@ final class RequestValidatorTests: XCTestCase {
     }
 
     func test_validadtedURLString_should_ThrowInvalidURL_forInvalidURL() {
-        let invalidURL = "invalid_url"
-
+        let invalidURL = ""
         XCTAssertThrowsError(try sut.validateURLString(invalidURL)) { error in
             XCTAssertEqual((error as? NetworkErrors), .invalidURL)
         }

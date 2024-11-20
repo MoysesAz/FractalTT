@@ -14,7 +14,9 @@ final public class RequestValidator: RequestValidatorProtocol {
             throw NetworkErrors.nullURL
         }
 
-        let normalizedURL = urlString.starts(with: "http") ? urlString : "https://\(urlString)"
+        var normalizedURL = urlString.starts(with: "https") ? urlString : "https://\(urlString)"
+        normalizedURL = urlString.contains(".") ? normalizedURL : ""
+
         guard let newURL = URL(string: normalizedURL) else {
             Log.message("INVALID URL: \(urlString)", .failure)
             throw NetworkErrors.invalidURL
