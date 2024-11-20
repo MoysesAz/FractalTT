@@ -7,13 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CC34CADAC5DDFA32D23888F /* Pods_FractalTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9F198219D1E868575DEFB6 /* Pods_FractalTT.framework */; };
+		95A6BCC62CEBC72600E6F949 /* Pods_FractalTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9F198219D1E868575DEFB6 /* Pods_FractalTT.framework */; };
+		95A6BCF12CEBC96A00E6F949 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BC552CEBC00D00E6F949 /* Coordinator.framework */; };
+		95A6BCF22CEBC96A00E6F949 /* Coordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BC552CEBC00D00E6F949 /* Coordinator.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95A6BCF32CEBC96A00E6F949 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95A6BCF22CEBC96A00E6F949 /* Coordinator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C9F198219D1E868575DEFB6 /* Pods_FractalTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FractalTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3810DF2F484A2E6BA29896DD /* Pods-FractalTT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalTT.release.xcconfig"; path = "Target Support Files/Pods-FractalTT/Pods-FractalTT.release.xcconfig"; sourceTree = "<group>"; };
+		951E6B062CE5799D005EF371 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		951E6B0C2CE57C45005EF371 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		951E6B102CE58037005EF371 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955C7DEF2CEA675D00658A08 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955C7E382CEA851D00658A08 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		959D29672CE509490039FD68 /* FractalTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FractalTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavedProducts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC442CEBBF2700E6F949 /* Commons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Commons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC482CEBBF2F00E6F949 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC4B2CEBBF4200E6F949 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC4E2CEBBF4900E6F949 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC522CEBBF6600E6F949 /* ProductDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ProductDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A6BC552CEBC00D00E6F949 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B6BB2F2CEA910B0093FDF2 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95DE247D2CEABD48009A11FA /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3D25BBE256EAA28B546115 /* Pods-FractalTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FractalTT.debug.xcconfig"; path = "Target Support Files/Pods-FractalTT/Pods-FractalTT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,7 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CC34CADAC5DDFA32D23888F /* Pods_FractalTT.framework in Frameworks */,
+				95A6BCC62CEBC72600E6F949 /* Pods_FractalTT.framework in Frameworks */,
+				95A6BCF12CEBC96A00E6F949 /* Coordinator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +84,20 @@
 		4BB9FAA94788AA692D27079F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95A6BC552CEBC00D00E6F949 /* Coordinator.framework */,
+				95A6BC522CEBBF6600E6F949 /* ProductDetails.framework */,
+				95A6BC4E2CEBBF4900E6F949 /* Networking.framework */,
+				95A6BC4B2CEBBF4200E6F949 /* Home.framework */,
+				95A6BC482CEBBF2F00E6F949 /* DesignSystem.framework */,
+				95A6BC442CEBBF2700E6F949 /* Commons.framework */,
+				95A6BB9E2CEBB67C00E6F949 /* SavedProducts.framework */,
+				95DE247D2CEABD48009A11FA /* FractalData.framework */,
+				95B6BB2F2CEA910B0093FDF2 /* FractalData.framework */,
+				955C7E382CEA851D00658A08 /* FractalData.framework */,
+				955C7DEF2CEA675D00658A08 /* Coordinator.framework */,
+				951E6B102CE58037005EF371 /* Coordinator.framework */,
+				951E6B0C2CE57C45005EF371 /* Coordinator.framework */,
+				951E6B062CE5799D005EF371 /* Coordinator.framework */,
 				0C9F198219D1E868575DEFB6 /* Pods_FractalTT.framework */,
 			);
 			name = Frameworks;
@@ -97,6 +142,7 @@
 				959D29642CE509490039FD68 /* Frameworks */,
 				959D29652CE509490039FD68 /* Resources */,
 				959D299F2CE520440039FD68 /* ShellScript */,
+				95A6BCF32CEBC96A00E6F949 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,14 +259,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FractalTT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -228,6 +278,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -244,14 +295,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35GM6XG62S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FractalTT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -259,6 +314,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.FractalTT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
