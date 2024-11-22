@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951A39FB2CF00E4300D99537 /* DataF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 951A39F92CF00E4300D99537 /* DataF.xcdatamodeld */; };
 		95A6BCE42CEBC83400E6F949 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C6C2822CEA514D00932A03 /* Home.framework */; };
 		95A6BCE62CEBC83500E6F949 /* FractalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB2A2CEB741700E6F949 /* FractalData.framework */; };
 		95A6BD072CEBC9B900E6F949 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A6BB372CEB784500E6F949 /* DesignSystem.framework */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		951A39FA2CF00E4300D99537 /* DataF.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataF.xcdatamodel; sourceTree = "<group>"; };
 		955C7E3B2CEA8BA800658A08 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A6BB2A2CEB741700E6F949 /* FractalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FractalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A6BB372CEB784500E6F949 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 		95C6C1E22CEA4EFE00932A03 = {
 			isa = PBXGroup;
 			children = (
+				951A39F92CF00E4300D99537 /* DataF.xcdatamodeld */,
 				95A6BB1C2CEB689900E6F949 /* Data */,
 				95C6C1EE2CEA4EFE00932A03 /* ProductDetails */,
 				95C6C1F82CEA4EFE00932A03 /* ProductDetailsTests */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951A39FB2CF00E4300D99537 /* DataF.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +551,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		951A39F92CF00E4300D99537 /* DataF.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				951A39FA2CF00E4300D99537 /* DataF.xcdatamodel */,
+			);
+			currentVersion = 951A39FA2CF00E4300D99537 /* DataF.xcdatamodel */;
+			name = DataF.xcdatamodeld;
+			path = ../FractalTT/Application/DataF.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 95C6C1E32CEA4EFE00932A03 /* Project object */;
 }

@@ -1,10 +1,14 @@
 import Foundation
 import ProductDetails
 import FractalData
+import CoreData
 
 public final class ProductDetailsDataStoreMock: ProductDetailsDataStoreProtocol {
+    let context: NSManagedObjectContext?
 
-    public init() {}
+    init(context: NSManagedObjectContext?) {
+        self.context = context
+    }
 
     private var mockProducts: [Products] = []
 
@@ -22,7 +26,7 @@ public final class ProductDetailsDataStoreMock: ProductDetailsDataStoreProtocol 
             return false
         }
 
-        let newProduct = Products() // add mockContext
+        let newProduct = Products(context: context!) // add mockContext
         newProduct.product = product
         newProduct.tag = tag
         newProduct.productDescription = productDescription

@@ -1,16 +1,45 @@
 import XCTest
+import CoreData
 import FractalData
 import Home
 
 @testable import ProductDetails
 
+
+
 final class ProductDetailsViewModelTests: XCTestCase {
     var mockDataStore: ProductDetailsDataStoreMock!
     var viewModel: ProductDetailsViewModel!
 
+    class TestCoreDataStack: NSObject {
+        lazy var persistentContainer: NSPersistentContainer = {
+            guard let modelURL = Bundle(for: type(of: self)).url(forResource: "DataF", withExtension: "momd") else {
+                fatalError("Failed to locate DataF.momd in bundle.")
+            }
+
+            guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+                fatalError("Failed to load DataF.momd from bundle.")
+            }
+
+            let container = NSPersistentContainer(name: "DataF", managedObjectModel: managedObjectModel)
+            let description = NSPersistentStoreDescription()
+            description.url = URL(fileURLWithPath: "/dev/null") // Armazenamento em memória
+            container.persistentStoreDescriptions = [description]
+
+            container.loadPersistentStores { _, error in
+                if let error = error as NSError? {
+                    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            }
+            return container
+        }()
+
+    }
+
     override func setUp() {
         super.setUp()
-        mockDataStore = ProductDetailsDataStoreMock()
+        let context = TestCoreDataStack().persistentContainer.newBackgroundContext()
+        mockDataStore = ProductDetailsDataStoreMock(context: context)
         let mockProductModel = ProductsModel(id: 1,
                                              name: "TestProduct",
                                              status: "status",
